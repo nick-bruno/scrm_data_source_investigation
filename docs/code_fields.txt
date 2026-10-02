@@ -1,0 +1,2296 @@
+==============================================================================================================
+                                           PUB LOG CODE DICTIONARY                                            
+==============================================================================================================
+
+The 96 coded fields defined in P_HELP.CSV (IDENTIFICATION.zip), PUB LOG snapshot 10/01/2026. Source: DLA
+Logistics Information Services, FLIS Data Electronic Reading Room.
+
+Query the same data directly:
+    SELECT * FROM code_decode WHERE field = 'RNVC';
+
+Fields with more than 60 values are summarised rather than listed -- those are classification taxonomies
+(tariff codes, supply classes), not short code lists. Query code_decode for their full contents.
+
+Generated 2026-10-01 by: python -m flis_load.codebook
+
+==============================================================================================================
+INDEX
+==============================================================================================================
+
+FIELD                VALUES   DECODES COLUMN                              TITLE
+--------------------------------------------------------------------------------------------------------------
+AAC                      26   v_flis_management.AAC [deferred]            ACQUISITION ADVICE
+ACC                      29   -- no column --                             AIR COMMODITY
+ACTY_CD                 174   -- no column --                             MAJOR ORGANIZATIONAL ENTITY
+AMC                       6   -- no column --                             ACQUISITION METHOD
+AMSC                     20   -- no column --                             ACQUISITION METHOD SUFFIX
+ARC                       3   -- no column --                             ACCOUNTING REQUIREMENTS
+AUTH_COLLAB             461   -- no column --                             AUTHORIZED ITEM IDENTIFICATION DATA
+BUDGET                   31   -- no column --                             BUDGET
+CAGE_STATUS              12   v_flis_part.CAGE_STATUS (+1)                STATUS
+CANCELLED_NIIN_FSC      676   v_flis_cancelled_niin.CANCELLED_NIIN_FSC    FEDERAL SUPPLY CLASSIFICATION
+CEC                       8   -- no column --                             COMBAT ESSENTIALITY
+CIIC                     36   v_flis_management.CIIC [deferred]           CONTROLLED INVENTORY ITEM CODE
+CLNG_DRYING               4   -- no column --                             CLEANING AND DRYING PROCEDURE
+COG                     120   -- no column --                             COGNIZANCE
+COND_CODE                 3   -- no column --                             CONDITION
+COS                      10   -- no column --                             CLASS OF SUPPLY CODES
+CUSH_DUN                 37   -- no column --                             CUSHIONING AND DUNNAGE MATERIAL
+DSOR                     88   -- no column --                             DEPOT SOURCE OF REPAIR
+ENAC                    308   v_flis_identification.ENAC                  ENVIRONMENTAL ATTRIBUTE
+ERRC                      6   -- no column --                             EXPENDABILITY-RECOVERABILITY-REPARA
+FSC                     676   p_flis_nsn.FSC                              FEDERAL SUPPLY CLASSIFICATION
+FUND                     15   -- no column --                             FUND
+HCC                      65   v_flis_part.HCC (+1)                        HAZARDOUS CHARACTERISTICS
+HMC                     221   -- no column --                             HAZARDOUS MATERIEL
+HMIC                      4   v_flis_identification.HMIC                  HAZARDOUS MATERIAL INDICATOR
+IAC                       2   -- no column --                             INVENTORY ACCOUNT
+ICP                      20   -- no column --                             POINT INVENTORY ITEM MANAGEMENT
+IMC                      22   -- no column --                             ITEM MANAGEMENT
+INC_STATUS                5   -- no column --                             STATUS
+INTEG                     3   -- no column --                             INTEGRITY
+INTER_CONT               88   -- no column --                             INTERMEDIATE CONTAINER
+IRRC                     44   -- no column --                             ISSUE, REPAIR, REQUISITION RESTRICT
+ISC                      11   v_flis_standardization.ISC                  ITEM STANDARDIZATION
+IUID_INDICATOR            2   v_flis_identification.IUID_INDICATOR        ITEM UNIQUE IDENTIFICATION
+LCL                      20   -- no column --                             LESS THAN CAR LOAD RATING
+LST_KWN_SOS             238   v_flis_identification.LST_KWN_SOS           SOURCE OF SUPPLY
+LTL                      20   -- no column --                             NATIONAL MOTOR FREIGHT CLASS RATING
+LVL_A                     7   -- no column --                             PACKING REQUIREMENT
+LVL_B                    10   -- no column --                             PACKING REQUIREMENT
+LVL_C                     7   -- no column --                             PACKING REQUIREMENT
+MATCAT_1                 21   -- no column --                             MAJOR MATERIEL CATEGORY
+MATCAT_2                 19   -- no column --                             MATERIAL CATEGORY APPROPRIATION AND
+MATCAT_3                  4   -- no column --                             MATERIEL CATEGORY DESCRIPTION AND U
+MATCAT_4_5              814   -- no column --                             MATERIEL CATEGORY SUBGROUP
+MEC                       9   -- no column --                             MANAGEMENT ECHELON
+MMAC                    479   -- no column --                             MATERIEL MANAGEMENT AGGREGATION
+MOE_CD                  174   -- no column --                             MAJOR ORGANIZATIONAL ENTITY
+MOP                      36   -- no column --                             METHOD OF PRESERVATION
+NIIN_STATUS_CODE         14   -- no column --                             NATIONAL ITEM IDENTIFICATION NUMBER
+NIIN_STAT_CD             14   v_flis_cancelled_niin.NIIN_STAT_CD (+1)     NATIONAL ITEM IDENTIFICATION NUMBER
+NIMSC                    25   -- no column --                             NONCONSUMABLE ITEM MATERIAL SUPPORT
+OPI                       5   -- no column --                             OPTIONAL PROCEDURE INDICATOR
+ORIG_STDZN_DEC          461   v_flis_standardization.ORIG_STDZN_DEC       ORIGINATOR OF STANDARDIZATION DECIS
+OTC                       5   -- no column --                             
+PCC                       8   -- no column --                             PHYSICAL CATEGORY
+PICA                    461   -- no column --                             PRIMARY INVENTORY CONTROL ACTIVITY
+PICA_LOA                 16   -- no column --                             PRIMARY INVENTORY CONTROL ACTY LEVE
+PICA_SICA                 2   -- no column --                             PRIMARY INVENTORY CONTROL ACTIVITY 
+PKG_CAT                  98   -- no column --                             PACKAGING CATEGORY
+PKG_DATA_SOURCE           8   -- no column --                             PACKAGING DATA SOURCE
+PMIC                      8   v_flis_identification.PMIC                  PRECIOUS METALS INDICATOR
+PRES_MAT                 30   -- no column --                             PRESERVATION MATERIAL
+PVC                       7   -- no column --                             PRICE VALIDATION
+QUP                      34   v_flis_management.QUP [deferred]            QUANTITY UNIT PACK
+REPLACEMENT_FSC         676   -- no column --                             FEDERAL SUPPLY CLASSIFICATION
+REP_REC_CODE             56   v_flis_management.REP_REC_CODE [deferred]   RECOVERABILITY/REPARABILITY
+RNAAC                   475   v_flis_part.RNAAC                           REFERENCE NUMBER ACTION ACTIVITY
+RNCC                     12   v_flis_part.RNCC                            REFERENCE NUMBER CATEGORY
+RNFC                      4   v_flis_part.RNFC                            REFERENCE NUMBER FORMAT
+RNJC                      4   v_flis_part.RNJC                            REFERENCE NUMBER JUSTIFICATION
+RNSC                     10   v_flis_part.RNSC                            REFERENCE NUMBER STATUS
+RNVC                      5   v_flis_part.RNVC                            REFERENCE NUMBER VARIATION
+SAC                       3   -- no column --                             STORES ACCOUNT
+SADC                   5122   v_flis_part.SADC                            SERVICE/AGENCY DESIGNATOR
+SCHEDULE_B            20393   v_flis_identification.SCHEDULE_B            SCHEDULE B EXPORT
+SHC                      33   -- no column --                             SPECIAL HAND
+SICA                    461   -- no column --                             SECONDARY INVENTORY CONTROL ACTIVIT
+SICA_LOA                 17   -- no column --                             SECONDARY INVENTORY CONTROL ACTIVIT
+SLC                      35   v_flis_management.SLC [deferred]            SHELF LIFE
+SMCC                     36   -- no column --                             SPECIAL MATERIAL CONTENT
+SMIC                    479   -- no column --                             SPECIAL MATERIAL IDENTIFICATION
+SNC                       2   -- no column --                             SERIAL NUMBER CONTROL
+SOS                     258   p_flis_nsn.SOS                              SOURCE OF SUPPLY
+SOSM                    238   v_flis_management.SOSM [deferred]           SOURCE OF SUPPLY
+SPC_MKG                  22   -- no column --                             SPECIAL MARKING
+SUPP_COLLAB             461   -- no column --                             SUPPLEMENTARY COLLABORATOR
+TCC                      30   -- no column --                             TYPE OF CARGO
+THK                      23   -- no column --                             THICKNESS OF CUSHIONING OR DUNNAGE
+TOS                      32   -- no column --                             ITEM TYPE STORAGE
+UCL                       4   -- no column --                             UNIT CONTAINER LEVEL
+UNIT_CONT                88   -- no column --                             UNIT CONTAINER
+UOM                     353   v_flis_management.UOM [deferred]            UNIT OF MEASURE
+USC                      14   v_flis_management.USC [deferred]            USING SERVICE
+WCC                     477   -- no column --                             WATER COMMODITY
+WRAP_MAT                 18   -- no column --                             WRAPPING MATERIAL
+W_ESDC                  206   -- no column --                             SPECIFIC WEAPONS SYSTEM/END ITEM OR
+
+  [deferred]      the column lives in a source registered but not enabled in sources.py
+  -- no column -- the field is defined by DLA but no loaded table carries it
+
+==============================================================================================================
+CODED COLUMNS WITH NO DECODE ENTRY
+==============================================================================================================
+
+Columns in the loaded tables that look coded but have no p_help entry. Their meanings have to come from the
+FLIS manuals (DoD 4100.39-M) or, for DEMIL, from DoD 4160.28-M.
+
+  ADP                   v_flis_identification.ADP
+  CRIT_CD               v_flis_identification.CRIT_CD
+  DAC                   v_flis_part.DAC
+  DEMIL                 v_flis_cancelled_niin.DEMIL
+  DMIL                  v_flis_identification.DMIL
+  DMIL_INT_CD           v_flis_identification.DMIL_INT_CD
+  ESD_EMI               v_flis_identification.ESD_EMI
+  FEDMALL               v_flis_identification.FEDMALL
+  II                    v_flis_identification.II
+  MEDALS                v_flis_part.MEDALS
+
+==============================================================================================================
+FIELD DETAIL
+==============================================================================================================
+
+--------------------------------------------------------------------------------------------------------------
+AAC  --  ACQUISITION ADVICE
+  decodes: v_flis_management.AAC [deferred]
+  values:  26
+--------------------------------------------------------------------------------------------------------------
+  ACQUISITION ADVICE CODE (AAC): A CODE DENOTING HOW, AS DISTINGUISHED FROM WHERE, AND UNDER WHATRESTRICTIONS
+  AN ITEM WILL BE ACQUIRED. SHORT TITLE, AAC. SEE VOLUME 10, TABLES 58, 97, 113, AND 143 AND QUICK INFO
+  ON-LINE.
+
+    A       SERVICE/AGENCY - REGULATED
+    B       INVENTORY CONTROL POINT
+    C       SERVICE/AGENCY - MANAGED
+    D       DOD INTEGRATED MATERIEL-MANAGED
+    E       OTHER SERVICE-MANAGED
+    F       FABRICATE OR ASSEMBLE
+    G       GENERAL SERVICES ADMINISTRATION
+    H       DIRECT DELIVERY UNDER A CENTRAL CONTRACT
+    I       DIRECT ORDERING FROM A CENTRAL CONTRACT/SCHEDULE
+    J       NOT STOCKED
+    K       CENTRALLY STOCKED FOR OVERSEAS ONLY
+    L       LOCAL PURCHASE
+    M       RESTRICTED REQUISITIONS-MAJOR OVERHAUL
+    N       RESTRICTED REQUISITIONING - DISPOSAL
+    O       PACKAGED FUELS
+    P       RESTRICTED REQUISITION - SECURITY ASSISTANCE PROGRAM
+    Q       BULK PETROLEUM PRODUCTS DLA-MANAGED
+    R       RESTRICTED REQUISITION - GOVERNMENT FURNISHED MATERIAL
+    S       RESTRICTED REQUISITIONING - OTHER SERVICE FUNDED
+    T       CONDEMNED
+    U       LEAD SERVICE - MANAGED
+    V       TERMINAL ITEM FUTURE PROCUREMENT IS NOT AUTHORIZED
+    W       RESTRICTED REQUISITIONING - SPECIAL INSTRUCTIONS APPLY
+    X       SEMIACTIVE ITEM-NO REPLACEMENT
+    Y       TERMINAL ITEM
+    Z       INSURANCE/NUMERIC STOCKAGE OBJECTIVE
+
+
+--------------------------------------------------------------------------------------------------------------
+ACC  --  AIR COMMODITY
+  decodes: -- no column --
+  values:  29
+--------------------------------------------------------------------------------------------------------------
+  AIR COMMODITY CODE: AIR COMMODITY CODE AS IDENTIFIED IN THE FIRST PART OF TABLE 85 IN FLIS PROCEDURES VOL
+  10.
+
+    2       ARMS/WEAPONS
+    3       AMMUNITION
+    4       EXPLOSIVES
+    5       NUCLEAR WEAPONS RELATED MATERIAL
+    A       SUPPLIES AND EQUIPMENT FOR AIRCRAFT
+    B       CONSTRUCTION MATERIALS
+    C       CHEMICAL CORPS ITEMS
+    D       ANIMALS
+    E       ENGINEER SUPPLIES
+    F       FUELS AND LUBRICANTS
+    G       PRINTED FORMS
+    H       INSTRUMENTS / EQUIPMENT / SUPPLIES
+    J       UNACCOMPANIED BAGGAGE
+    K       CLOTHING
+    L       DEFENSE COURIER SERVICE MATERIEL
+    M       MEDICAL SUPPLIES
+    N       SHIP'S PARTS
+    O       NOT TO BE USED
+    P       PHOTOGRAPHIC SUPPLIES
+    Q       PLANTS
+    R       RATIONS AND SUBSISTENCE SUPPLIES
+    S       OFFICE AND SCHOOL SUPPLIE
+    T       HOUSEHOLD GOODS
+    U       MAIL
+    V       VEHICLES, MACHINERY, SHOP, AND WAREHOUSE EQUIPMENT
+    W       ANY MATERIAL
+    X       INTELLIGENCE MATERIALS
+    Y       PERSONNEL SERVICES
+    Z       HUMAN REMAINS
+
+
+--------------------------------------------------------------------------------------------------------------
+ACTY_CD  --  MAJOR ORGANIZATIONAL ENTITY
+  decodes: -- no column --
+  values:  174
+--------------------------------------------------------------------------------------------------------------
+  MAJOR ORGANIZATIONAL ENTITY (MOE) CODE: A CODE REPRESENTING THE SUBDIVISION OF A U.S. GOVERNMENTAL
+  ORGANIZATION OR AN AGENCY OF THE NORTH ATLANTIC TREATY ORGANIZATION NATIONS, OTHER FRIENDLY GOVERNMENTS AND
+  INTERNATIONAL ORGANIZATIONS PARTICIPATING IN THE FEDERAL CATALOG PROGRAM. SEE VOLUME 10, TABLES 51 AND 174
+  AND QUICK INFO ON-LINE.SEE VOLUME 10, TABLES 51 AND 174 AND QUICK INFO ON-LINE.
+
+  174 values -- too many to list. Query:
+      SELECT value, meaning FROM code_decode WHERE field = 'ACTY_CD' ORDER BY value;
+
+--------------------------------------------------------------------------------------------------------------
+AMC  --  ACQUISITION METHOD
+  decodes: -- no column --
+  values:  6
+--------------------------------------------------------------------------------------------------------------
+  ACQUISITION METHOD CODE: A CODE REFLECTING THE DECISION OF THE PRIMARY INVENTORY CONTROL ACTIVITY /PICA/ AS
+  TO TECHNIQUE OF PURCHASING TO BE EMPLOYED FROM A PLANNED PROCUREMENT REVIEW. MUST BE USED IN COMBINATION
+  WITH DRN 2876. SEE VOLUME 10, TABLES 70 AND 71 AND QUICK INFO ON-LINE.
+
+    0       NOT ESTABLISHED
+    1       SUITABLE FOR COMPETITIVE ACQUISITION
+    2       SUITABLE FOR COMPETITIVE ACQUISITION FOR THE FIRST TIME
+    3       ACQUIRE DIRECTLY FROM THE ACTUAL MANUFACTURER
+    4       ACQUIRE FOR THE FIRST TIME DIRECTLY FROM THE ACTUAL MANUFACTURER
+    5       ACQUIRE ONLY FROM THE PRIME CONTRACTOR
+
+
+--------------------------------------------------------------------------------------------------------------
+AMSC  --  ACQUISITION METHOD SUFFIX
+  decodes: -- no column --
+  values:  20
+--------------------------------------------------------------------------------------------------------------
+  ACQUISITION METHOD SUFFIX CODE (AMSC): A SUPPLEMENTARY CODE TO INDICATE THE PRIMARY REASON WHY THE NUMERIC
+  CODE/PROCUREMENT METHOD CODE/WAS ASSIGNED FOR PROCUREMENT. E.G. ITEM REQUIRES SPECIAL TESTING, RIGHTS TO
+  PROCUREMENT NOT LEGALLY AVAILABLE, ETC. MUST BE USED IN COMBINATION WITH DRN 2871. SEE VOLUME 10, TABLES 70
+  AND 71 AND QUICK INFO ON-LINE.
+
+    0       NOT ESTABLISHED
+    A       THE GOVERNMENT'S RIGHTS TO USE DATA IN ITS POSSESSION IS QUESTIONABLE
+    B       ACQUISITION OF THIS PART IS RESTRICTED TO SOURCE(S) SPECIFIED ON "SOURCE CONTROL"
+    C       REQUIRES ENGINEERING SOURCE APPROVAL
+    D       DATA NOT PHYSICALLY AVAILABLE
+    G       THE GOVERNMENT HAS UNLIMITED RIGHTS TO THE TECHNICAL DATA
+    H       DOES NOT HAVE SUFFICIENT, ACCURATE, OR LEGIBLE DATA
+    K       THIS PART MUST BE PRODUCED FROM CLASS 1A CASTINGS
+    L       THE ANNUAL BUY VALUE FALLS BELOW THE SCREENING THRESHOLD OF $10,000
+    M       MASTER OR COORDINATED TOOLING IS REQUIRED
+    N       REQUIRES SPECIAL TEST AND/OR INSPECTION FACILITIES
+    P       CANNOT BE PURCHASED
+    Q       DOES NOT HAVE ADEQUATE DATA, LACKS RIGHTS TO DATA, OR BOTH
+    R       THE DATA OR THE RIGHTS ARE NOT OWNED BY THE GOVERNMENT
+    S       PROCUREMENT OF THIS ITEM RESTRICTED TO LIMITED SOURCE(S)
+    T       ACQUISITION OF THIS PART IS CONTROLLED BY QPL PROCEDURES
+    U       THE COST TO BREAKOUT AND ACQUIRE IT COMPETITIVELY EXCEED THE PROJECTED SAVINGS
+    V       HIGH-RELIABILITY PART
+    Y       THE DESIGN OF THIS PART IS UNSTABLE
+    Z       COMMERCIAL/NON-DEVELOPMENTAL/OFF-THE-SHELF-ITEM
+
+
+--------------------------------------------------------------------------------------------------------------
+ARC  --  ACCOUNTING REQUIREMENTS
+  decodes: -- no column --
+  values:  3
+--------------------------------------------------------------------------------------------------------------
+  ACCOUNTING REQUIREMENTS CODE, ARMY: A CODE EMPLOYED BY THE U.S. ARMY TO INDICATE THE ACCOUNTABILITY OF AN
+  ITEM OF SUPPLY. SEE VOLUME 10, TABLE 64 AND QUICK INFO ON-LINE.
+
+    D       DURABLE ITEM
+    N       NONEXPENDABLE ITEM
+    X       EXPENDABLE ITEM
+
+
+--------------------------------------------------------------------------------------------------------------
+AUTH_COLLAB  --  AUTHORIZED ITEM IDENTIFICATION DATA COLLABORATOR
+  decodes: -- no column --
+  values:  461
+--------------------------------------------------------------------------------------------------------------
+  AUTHORIZED ITEM IDENTIFICATION DATA COLLABORATOR CODE: AN ACTIVITY DESIGNATED TO COLLABORATE ON PROPOSED
+  REVISIONS TO ITEM IDENTIFICATION DATA FOR ALL NATIONAL ITEM IDENTIFICATION NUMBERS WITH A MOE RULE ON WHICH
+  THE ACTIVITY IS RECORDED.
+
+  461 values -- too many to list. Query:
+      SELECT value, meaning FROM code_decode WHERE field = 'AUTH_COLLAB' ORDER BY value;
+
+--------------------------------------------------------------------------------------------------------------
+BUDGET  --  BUDGET
+  decodes: -- no column --
+  values:  31
+--------------------------------------------------------------------------------------------------------------
+  AIR FORCE BUDGET CODE-MANAGEMENT DATA LIST: A CODE EMPLOYED BY THE AIR FORCE TO CLASSIFY ITEMS INTO
+  CATEGORIES BY BUDGET ACCOUNT FOR MANAGEMENT INFORMATION PURPOSES. SEE VOLUME 10, TABLE 67 AND QUICK INFO
+  ON-LINE.
+
+            A BLANK FIELD INDICATES CENTRALLY FUNDED, PROCURED, AND MANAGED EQUIPMENT ITEMS
+    *       NEED FOR ITEM REVIEW
+    6       ALL AVIATION FUELS AND OILS
+    8       MATERIEL SUPPORT DIVISION
+    9       AIR FORCE DECENTRALLY MANAGED EXPENSE ITEMS
+    A       COMMON AIRCRAFT GROUND SUPPORT EQUIPMENT
+    B       WAR-CONSUMABLE SPARES
+    C       PROCUREMENT OTHER THAN AIR FORCE
+    D       OTHER CHARGES
+    E       MISSILE REPLACEMENT EQUIP
+    F       PROCUREMENT OTHER THAN AIR FORCE
+    G       OTHER CHARGES
+    H       MUNITIONS
+    I       DEPARTMENT OF ENERGY
+    J       VEHICULAR EQUIP NON-REMS
+    K       CRYPTOLOGIC
+    L       ELECTRONICS AND TELECOMMUNICATIONS
+    M       OTHER BASE MAINTENANCE AND SUPPORT EQUIPMENT
+    N       PROCUREMENT OTHER THAN AIR FORCE
+    O       ELECTRONICS & TELECOMMUNICATIONS
+    P       MISSILE WEAPON SYSTEMS
+    Q       AIRCRAFT WEAPON SYSTEMS
+    R       AIRCRAFT MODIFICATION
+    S       AIRCRAFT REPLENISHMENT SPARES
+    T       MISSILE REPLENISHMENT SPARES
+    U       AMMUNITION REPLENISHMENT SPARES
+    V       VEHICULAR EQUIP REMS
+    W       OTHER BASE MAINTENANCE AND SUPPORT REPLENISHMENT SPARES
+    X       VEHICULAR REPLENISHMENT SPARES
+    Y       AF CENTRALLY PROCURED EQUIPMENT ITEMS
+    Z       LOCAL PURCHASE ITEMS OVER $250,000
+
+
+--------------------------------------------------------------------------------------------------------------
+CAGE_STATUS  --  STATUS
+  decodes: v_flis_part.CAGE_STATUS (+1)
+  values:  12
+--------------------------------------------------------------------------------------------------------------
+  CAGE/NCAGE STATUS CODE: A CODE WHICH DESIGNATES A SPECIFIC STATUS CONDITION RELATING TO A CAGE/NCAGE CODE.
+  SEE VOLUME 10, TABLE 19 AND QUICK INFO ON-LINE.
+
+    A       ACTIVE
+    C       RESTRAINT USE THE CAGE CODE INDICATED
+    E       DEBARRED
+    F       OBSOLETE LOCATION OF COMPANY UNKNOWN
+    H       OBSOLETE ENTITY HAS BEEN DISCONTINUED
+    N       CANCELLED ENTITY HAS BEEN DISCONTINUED
+    P       CANCELLED LOCATION OF ENTITY IS UNKNOWN
+    R       CANCELLED COMPANY DISCONTINUED
+    T       SPECIALIZED USE - JOINT VENTURE
+    U       ACTIVE RECORD WITH RESTRAINT
+    W       ACTIVE RECORD WITH RESTRAINT
+    Y       ACTIVE SPECIALIZED USE RECORD
+
+
+--------------------------------------------------------------------------------------------------------------
+CANCELLED_NIIN_FSC  --  FEDERAL SUPPLY CLASSIFICATION
+  decodes: v_flis_cancelled_niin.CANCELLED_NIIN_FSC
+  values:  676
+--------------------------------------------------------------------------------------------------------------
+  FSC: A CODE WHICH IDENTIFIES THE SUPPLY CLASSIFICATION OF AN ITEM OF SUPPLY IDENTIFIED UNDER THE FEDERAL
+  CATALOGING PROGRAM, AN ITEM OF PRODUCTION AND/OR A HOMOGENEOUS AREA OF COMMODITIES IN RESPECT TO THEIR
+  PHYSICAL OR PERFORMANCE CHARACTERISTICS. THE FIRST TWO DIGITS IDENTIFY THE FEDERAL SUPPLY GROUP AND THE
+  LAST TWO DIGITS IDENTIFY THE SPECIFIC CLASS WITHIN THE SPECIFIED GROUP. THE COMBINATION OF THESE FOUR
+  DIGITS CONSTITUTE THE FEDERAL SUPPLY CLASSIFIC
+
+  676 values -- too many to list. Query:
+      SELECT value, meaning FROM code_decode WHERE field = 'CANCELLED_NIIN_FSC' ORDER BY value;
+
+--------------------------------------------------------------------------------------------------------------
+CEC  --  COMBAT ESSENTIALITY
+  decodes: -- no column --
+  values:  8
+--------------------------------------------------------------------------------------------------------------
+  COMBAT ESSENTIALITY CODE, MARINE CORPS: A CODE EMPLOYED BY THE MARINE CORPS TO ESTABLISH THAT AN END ITEM
+  IS ESSENTIAL TO THE OPERATIONAL READINESS OF A WEAPON SYSTEM OR THE CONDUCT OF A MILITARY MISSION: OR THAT
+  A FUNCTIONAL PART CONTRIBUTES TO THE TACTICAL AND ESSENTIAL OPERATIONS OF AN END ITEM COMPONENT OR
+  ASSEMBLY, AND ITS FAILURE WOULD RENDER THE END ITEM INOPERABLE OR INCAPABLE OF FULFILLING ITS MISSION: OR
+  THAT A REPAIR OR SECONDARY DEPOT REPARABLE COMPONENT IS REQUIRED
+
+    0       NON-COMBAT ESSENTIAL END ITEM
+    1       COMBAT ESSENTIAL END ITEM
+    2       NON-CRITICAL REPAIR PART
+    3       CRITICAL FOR HEALTH AND SAFETY
+    4       CRITICAL FOR STATE AND LOCAL LAWS
+    5       CRITICAL REPAIR PART TO A COMBAT ESSENTIAL END ITEM
+    6       CRITICAL REPAIR PART TO A NON-COMBAT ESSENTIAL END ITEM
+    7       NOT ASSIGNED A SPECIFIC APPLICATION
+
+
+--------------------------------------------------------------------------------------------------------------
+CIIC  --  CONTROLLED INVENTORY ITEM CODE
+  decodes: v_flis_management.CIIC [deferred]
+  values:  36
+--------------------------------------------------------------------------------------------------------------
+  CONTROLLED INVENTORY ITEM CODE (CIIC): A CODE INDICATING THE SECURITY CLASSIFICATION AND/OR SECURITY RISK
+  OR PILFERAGE CONTROLS FOR STORAGE AND TRANSPORTATION OF DOD ASSETS. SEE VOLUME 10, TABLE 61 AND QUICK INFO
+  ON-LINE.ASSETS. SEE VOLUME 10, TABLE 61 AND QUICK INFO ON-LINE.
+
+    $       UNCLASSIFIED BUT MAY REQUIRE SPECIAL CONTROLS
+    1       NON-NUCLEAR MISSILES,RECOILLESS RIFLES AND ROCKETS
+    2       HIGH SENSITIVITY (SRC II)
+    3       MODERATE SENSITIVITY (SRC III)
+    4       LOW SENSITIVITY (SRC IV)
+    5       HIGHEST SENSITIVITY (SRC I) SECRET
+    6       HIGHEST SENSITIVITY (SRC I) CONFIDENTIAL
+    7       NON-SENSITIVE (SRC-N/A)
+    8       HIGH SENSITIVITY (SCR) CONFIDENTIAL
+    9       CONTROLLED CRYPTOGRAPHIC ITEM
+    A       CONFIDENTIAL - FORMERLY RESTRICTED
+    B       CONFIDENTIAL - RESTRICTED
+    C       CONFIDENTIAL OR MODERATE AND LOW SENSITIVITY
+    D       CONFIDENTIAL - CRYPTOLOGIC
+    E       SECRET - CRYPTOLOGIC
+    F       TOP SECRET - CRYPTOLOGIC
+    G       SECRET - FORMERLY RESTRICTED DATA
+    H       SECRET - RESTRICTED DATA
+    I       AIRCRAFT ENGINE EQUIPMENT AND PARTS
+    J       PILFERAGE
+    K       TOP SECRET - FORMERLY RESTRICTED DATA
+    L       TOP SECRET - RESTRICTED DATA
+    M       HANDTOOLS AND SHOP EQUIPMENT
+    N       FIREARMS PIECE PARTS AND NONLETHAL FIREARMS
+    O       UNCLASSIFIED NAVAL NUCLEAR PROPULSION INFORMATION
+    P       AMMUNITION AND EXPLOSIVES
+    Q       DRUG OR OTHER CONTROLLED SUBSTANCE
+    R       PRECIOUS METALS
+    S       SECRET
+    T       TOP SECRET
+    U       UNCLASSIFIED
+    V       INDIVIDUAL CLOTHING AND EQUIPMENT
+    W       COMPONENT AS DEFINED IN AFI 91-101
+    X       PHOTOGRAPHIC EQUIPMENT AND SUPPLIES
+    Y       COMMUNICATION/ELECTRONIC EQUIPMENT
+    Z       VEHICULAR EQUIPMENT
+
+
+--------------------------------------------------------------------------------------------------------------
+CLNG_DRYING  --  CLEANING AND DRYING PROCEDURE
+  decodes: -- no column --
+  values:  4
+--------------------------------------------------------------------------------------------------------------
+  CLEANING AND DRYING PROCEDURE CODE: A ONE POSITION ALPHANUMERIC CODE THAT DEFINES THE PROCEDURE FOR
+  REMOVING SOIL/FOREIGN MATTER FROM PARTS, AND THE PROCEDURES TO ACCOMPLISH THE SUBSEQUENT DRYING OF THE
+  CLEANED PART ITEM. IN ACCORDANCE WITH DOD 4100.39-M, VOLUME 10, TABLE 182 AND MIL-STD-2073-1E, APPENDIX J,
+  TABLE J.II.
+
+    0       NUMERIC
+    1       ANY SUITABLE PROCESS
+    X       SEE METHOD OF PRESERVATIO
+    Z       SPECIAL REQUIREMENTS
+
+
+--------------------------------------------------------------------------------------------------------------
+COG  --  COGNIZANCE
+  decodes: -- no column --
+  values:  120
+--------------------------------------------------------------------------------------------------------------
+  COGNIZANCE CODE, NAVY: A CODE EMPLOYED BY THE U.S. NAVY TO CLASSIFY ITEMS BY TECHNICAL PROGRAM, TYPE OF
+  FUND, AND TO INDICATE THE COGNIZANT INVENTORY CONTROL POINT /ICP/ AND TECHNICALLY RESPONSIBLE COMMAND.SEE
+  VOLUME 10, TABLES 62 AND 129 AND QUICK INFO ON-LINE.SEE VOLUME 10, TABLES 62 AND 129 AND QUICK INFO
+  ON-LINE.
+
+  120 values -- too many to list. Query:
+      SELECT value, meaning FROM code_decode WHERE field = 'COG' ORDER BY value;
+
+--------------------------------------------------------------------------------------------------------------
+COND_CODE  --  CONDITION
+  decodes: -- no column --
+  values:  3
+--------------------------------------------------------------------------------------------------------------
+  CONDITION CODE: A ONE POSITION NUMERIC CODE THAT DENOTES THE RESTRICTIONS FOR CLASSIFYING APPROVED ITEM
+  NAMES (AIN).
+
+    1       ONE SPECIFIC FEDERAL SUPPLY CLASSIFICATION
+    2       TWO OR MORE SPECIFIC FEDERAL SUPPLY CLASSIFICATIONS
+    3       ONE OR MORE LOGICAL FEDERAL SUPPLY CLASSIFICATIONS
+
+
+--------------------------------------------------------------------------------------------------------------
+COS  --  CLASS OF SUPPLY CODES
+  decodes: -- no column --
+  values:  10
+--------------------------------------------------------------------------------------------------------------
+  CATAGORIES INTO WHICH SUPPLIES ARE GROUPED IN ORDER TO FACILITATE SUPPLY MANAGEMENT AND PLANNING. IN
+  ACCORDANCE WITH SOCOM DIRECTIVE 700-22 AND DOD 4100.39-M, VOLUME 10, TABLE 167, USSOCOM MATERIEL CATEGORY
+  CODES.
+
+    0       CLASS X (10)
+    1       SUBSISTENCE
+    2       CLOTHING
+    3       PETROLEUM
+    4       CONSTRUCTION MATERIALS
+    5       AMMUNITION
+    6       PERSONAL DEMAND ITEMS
+    7       MAJOR END ITEMS/PRINCIPAL ITEMS
+    8       MEDICAL MATERIEL
+    9       REPAIR PARTS AND COMPONENTS REQUIRED FOR MAINTENANCE OF EQUIPMENT
+
+
+--------------------------------------------------------------------------------------------------------------
+CUSH_DUN  --  CUSHIONING AND DUNNAGE MATERIAL
+  decodes: -- no column --
+  values:  37
+--------------------------------------------------------------------------------------------------------------
+  CUSHIONING AND DUNNAGE MATERIAL CODE: A TWO POSITION ALPHANUMERIC CODE THAT IDENTIFIES THE RESILIENT
+  MATERIAL OR DEVICES USED TO ABSORB AND DISSIPATE ENERGY FROM SHOCK AND VIBRATION TO ADEQUATELY PROTECT THE
+  CONTENTS AND PACKAGING COMPONENTS FROM PHYSICAL DAMAGE DURING HANDLING, SHIPMENT, AND STORAGE. IN
+  ACCORDANCE WITH DOD 4100.39-M, VOLUME 10, TABLE 182 AND MIL-STD-2073-1E, APPENDIX J, TABLE J.V.
+
+    00      NUMERIC
+    AD      BRACE AS REQUIRED
+    BG      WATER RESISTANT CELLULOSE CUSHIONING
+    BN      POLYSTYRENE CUSHIONING.
+    DA      PAPERBOARD CUSHIONING.
+    FA      WATER RESISTANT BOUND FIBER
+    FE      MEDIUM SOFT DENSITY WATER RESISTANT BOUND FIBER
+    FH      MEDIUM FIRM DENSITY WATER RESISTANT BOUND FIBER
+    FL      FIRM DENSITY WATER RESISTANT BOUND FIBER
+    GA      CUSHIONING MATERIAL
+    GC      EXPANDED POLYSTYRENE FOAM
+    GD      RIGID POLYURETHANE FOAM
+    GE      FLEXIBLE POLYURETHANE FOAM LIGHT LOAD
+    GF      FLEXIBLE POLYURETHANE FOAM MEDIUM LOAD
+    GH      FLEXIBLE POLYURETHANE FOAM HEAVY LOAD
+    GT      POLYPROPYLENE FOAM CUSHIONING
+    HA      CHIPBOARD SHEET ONE SIDE
+    HB      CHIPBOARD SHEET BOTH SIDES
+    HD      CHIPBOARD SHEET AS PADS
+    JA      DOMESTIC FIBERBOARD ONE SIDE
+    JB      DOMESTIC FIBERBOARD BOTH SIDES
+    JC      DOMESTIC FIBERBOARD AS PADS
+    LC      CELLULAR PLASTIC FILM CUSHIONING
+    LK      WOOD BLOCKING AND BRACING
+    LN      PLASTIC CONTAINERS
+    LT      ANTI-STATIC CELLULAR PLASTIC FILM CUSHIONING
+    MA      FLEXIBLE FOAM-IN-PLACE POLYURETHANE
+    MB      RIGID FOAM-IN-LACE POLYURETHANE
+    MD      FLEXIBLE FOAM-IN-PLACE POLYURETHANE
+    NA      CELLULAR PLASTIC FILM CUSHIONING
+    NB      ANTI-STATIC OPEN CELL PLASTIC CUSHIONING
+    NG      OPEN CELL PLASTIC CUSHIONING
+    NS      WEATHER RESISTANT FIBERBOARD
+    P4      CUSHIONED POUCH
+    P5      TRIPLE WALL FIBERBOARD AS PADS
+    P6      PACKAGING MATERIAL
+    ZZ      SPECIAL REQUIREMENTS
+
+
+--------------------------------------------------------------------------------------------------------------
+DSOR  --  DEPOT SOURCE OF REPAIR
+  decodes: -- no column --
+  values:  88
+--------------------------------------------------------------------------------------------------------------
+  DEPOT SOURCE OF REPAIR CODE: AN ORGANIC OR CONTRACT ACTIVITY DESIGNATED AS THE SOURCE TO PROVIDE DEPOT
+  MAINTENANCE OF EQUIPMENT. ONLY EACH SERVICE'S MAINTENANCE INTERSERVICE SUPPORT MANAGEMENT OFFICE (MISMO)
+  ASSIGNS DSOR CODES THROUGH PICA SERVICE CATALOGING FUNCTION. SEE VOLUME 10, TABLES 117 AND 126 AND QUICK
+  INFO ON-LINE.
+
+  88 values -- too many to list. Query:
+      SELECT value, meaning FROM code_decode WHERE field = 'DSOR' ORDER BY value;
+
+--------------------------------------------------------------------------------------------------------------
+ENAC  --  ENVIRONMENTAL ATTRIBUTE
+  decodes: v_flis_identification.ENAC
+  values:  308
+--------------------------------------------------------------------------------------------------------------
+  ENVIRONMENTAL ATTRIBUTE CODE: A CODE THAT IS USED TO PROVIDE A MEANS OF IDENTIFYING ITEMS OF SUPPLY THAT
+  HAVE ENVIRONMENTALLY PREFERRED CHARACTERISTICS. SEE VOLUME 10, TABLE 194 AND QUICK INFO ON-LINE.
+
+  308 values -- too many to list. Query:
+      SELECT value, meaning FROM code_decode WHERE field = 'ENAC' ORDER BY value;
+
+--------------------------------------------------------------------------------------------------------------
+ERRC  --  EXPENDABILITY-RECOVERABILITY-REPARABILITY CATEGORY CODE
+  decodes: -- no column --
+  values:  6
+--------------------------------------------------------------------------------------------------------------
+  EXPENDABILITY-RECOVERABILITY-REPARABILITY CATEGORY CODE-A: A CODE DENOTING THE EXPENDABILITY,
+  RECOVERABILITY, REPARABILITY CATEGORY EMPLOYED IN MANAGEMENT OF AN ITEM OF SUPPLY WITHIN THE AIR FORCE. SEE
+  VOLUME 10, TABLE 69 AND QUICK INFO ON-LINE.AIR FORCE. SEE VOLUME 10, TABLE 69 AND QUICK INFO ON-LINE.
+
+    C       SCARS
+    N       STOCK FUND
+    P       STOCK FUND
+    S       AFEMS
+    T       AFRAMS
+    U       AFEMS
+
+
+--------------------------------------------------------------------------------------------------------------
+FSC  --  FEDERAL SUPPLY CLASSIFICATION
+  decodes: p_flis_nsn.FSC
+  values:  676
+--------------------------------------------------------------------------------------------------------------
+  FSC: A CODE WHICH IDENTIFIES THE SUPPLY CLASSIFICATION OF AN ITEM OF SUPPLY IDENTIFIED UNDER THE FEDERAL
+  CATALOGING PROGRAM, AN ITEM OF PRODUCTION AND/OR A HOMOGENEOUS AREA OF COMMODITIES IN RESPECT TO THEIR
+  PHYSICAL OR PERFORMANCE CHARACTERISTICS. THE FIRST TWO DIGITS IDENTIFY THE FEDERAL SUPPLY GROUP AND THE
+  LAST TWO DIGITS IDENTIFY THE SPECIFIC CLASS WITHIN THE SPECIFIED GROUP. THE COMBINATION OF THESE FOUR
+  DIGITS CONSTITUTE THE FEDERAL SUPPLY CLASSIFICATION.
+
+  676 values -- too many to list. Query:
+      SELECT value, meaning FROM code_decode WHERE field = 'FSC' ORDER BY value;
+
+--------------------------------------------------------------------------------------------------------------
+FUND  --  FUND
+  decodes: -- no column --
+  values:  15
+--------------------------------------------------------------------------------------------------------------
+  FUND CODE, AIR FORCE: A CODE EMPLOYED BY THE AIR FORCE TO CLASSIFY ITEMS INTO CATEGORIES BY TYPE OF FUNDS
+  EMPLOYED. SEE VOLUME 10, TABLE 68 AND QUICK INFO ON-LINE.
+
+    AF      HQ USAF REGULATED
+    AS      FUELS STOCK FUND
+    BD      DEFENSE SUPPLY CENTER PHILADELPHIA
+    CC      CLOTHING STOCK
+    IN      INSURANCE ITEM
+    LK      LOCAL PURCHASE APPLICABLE TO FUELS
+    LP      LOCAL PURCHASE
+    LR      BASE FUNDED
+    MD      SECURITY ASSISTANCE PROGRAM USE ONLY
+    MP      FUELS STOCK MISSILE PROPELLANT
+    OS      CENTRALLY PROCURED
+    PD      REGULATED ITEMS
+    RO      MAJOR REPAIR
+    SF      RESPECTIVE INVENTORY CONTROL POINT
+    VU      VENDOR TO USER-OF-SUPPLY CONCEPT
+
+
+--------------------------------------------------------------------------------------------------------------
+HCC  --  HAZARDOUS CHARACTERISTICS
+  decodes: v_flis_part.HCC (+1)
+  values:  65
+--------------------------------------------------------------------------------------------------------------
+  HAZARDOUS CHARACTERISTICS CODE: A TWO-DIGIT ALPHANUMERIC CODE DEVELOPED PRIMARILY FOR STORAGE PURPOSES TO
+  ASSURE THAT INCOMPATIBLE HAZARDS ARE NOT STORED NEXT TO ONE ANOTHER. THE HCC THAT IS VISIBLE IN FLIS ONLY
+  PERTAINSTO THE LATEST FORMULATION FOR THIS CAGE/PART NUMBER. USER NEEDSTO BE AWARE THAT ADDITIONAL
+  INFORMATION MAY RESIDE IN THE HAZARDOUSMATERIAL INFORMATION SYSTEM (HMIS) FOR A DIFFERENT FORMULATION OFTHE
+  SAME CAGE/PART NUMBER. THE TECHNICAL DEFINITIONS ARE PROV
+
+  65 values -- too many to list. Query:
+      SELECT value, meaning FROM code_decode WHERE field = 'HCC' ORDER BY value;
+
+--------------------------------------------------------------------------------------------------------------
+HMC  --  HAZARDOUS MATERIEL
+  decodes: -- no column --
+  values:  221
+--------------------------------------------------------------------------------------------------------------
+  HAZARDOUS MATERIEL CODE: A CODE DENOTING MATERIAL WHICH REQUIRES SPECIAL HANDLING. IT IS USED AS A
+  QUALIFIER FOLLOWING THE NATIONAL MOTOR FREIGHT CLASSIFICATION AND THE UNIFORM FREIGHT CLASSIFICATION
+  NUMBER. SEE VOLUME 10, TABLE 49 AND QUICK INFO ON-LINE.
+
+  221 values -- too many to list. Query:
+      SELECT value, meaning FROM code_decode WHERE field = 'HMC' ORDER BY value;
+
+--------------------------------------------------------------------------------------------------------------
+HMIC  --  HAZARDOUS MATERIAL INDICATOR
+  decodes: v_flis_identification.HMIC
+  values:  4
+--------------------------------------------------------------------------------------------------------------
+  HAZARDOUS MATERIALS INDICATOR CODE: A CODE ESTABLISHED IN THE DLIS TOTAL ITEM RECORD (TIR) TO IDENTIFY TO
+  USERS OF THE FEDERAL CATALOG SYSTEM ALL KNOWN OR SUSPECTED HAZARDOUS ITEMS AS DEFINED BY SAFETY/HEALTH,
+  TRANSACTION AND/OR ENVIRONMENTAL REGULATIONS, TO SERVE AS A FLAG THAT A PROCURING ACTIVITY MUST ACQUIRE A
+  MATERIAL SAFETY DATA SHEET WHEN A HAZARDOUS ITEM IS PROCURED, AND TO INFORM FEDERAL CATALOG SYSTEM USERS
+  WHEN MORE DETAILED INFORMATION ON AN ITEM IS AVAILABLE
+
+    D       NO INFORMATION IN HMIRS
+    N       NO DATA IN HMIRS
+    P       NO INFORMATION IN HMIRS
+    Y       IN HMIRS
+
+
+--------------------------------------------------------------------------------------------------------------
+IAC  --  INVENTORY ACCOUNT
+  decodes: -- no column --
+  values:  2
+--------------------------------------------------------------------------------------------------------------
+  INVENTORY ACCOUNT CODE, COAST GUARD: A CODE USED TO DESIGNATE THE INVENTORY ACCOUNT IN WHICH AN ITEM IS
+  HELD IN THE COAST GUARD SUPPLY SYSTEM. SEE VOLUME 10, TABLE 127AND QUICK INFO ON-LINE.AND QUICK INFO
+  ON-LINE.
+
+    A       APPROPRIATIONS PURCHASE ACCOUNT ITEM
+    S       STOCK FUND ITEM MANAGED
+
+
+--------------------------------------------------------------------------------------------------------------
+ICP  --  POINT INVENTORY ITEM MANAGEMENT
+  decodes: -- no column --
+  values:  20
+--------------------------------------------------------------------------------------------------------------
+  THIS CODE PRESCRIBES THE SINGLE POINT INVENTORY ITEM MANAGEMENT FOR SPECIAL OPERATIONS-PECULIAR (SO-P)
+  EQUIPMENT. IN ACCORDANCE WITH SOCOM DIRECTIVE 700-22 AND DOD 4100.39-M, VOLUME 10, TABLE 164, USSOCOM
+  MATERIEL CATEGORY CODES.
+
+    B       PM-SOF SSES
+    C       PEO-C4
+    D       TBD1
+    F       PEO-FIXED WING
+    G       PM-WEAPONS
+    H       TBD2
+    J       PM-J4
+    K       PEO-SOFSA
+    L       PM-ECM
+    M       PEO-MARITIME
+    N       TBD3
+    P       PM-MISO
+    Q       PM-JATF/S&T
+    R       PEO-ROTARY WING
+    S       PEO-SRSE
+    T       INITIAL SICA OPTIMIZATION
+    U       PM-UAS
+    V       PM-FOSOV
+    W       PEO-SW
+    Z       PM-SOVAS
+
+
+--------------------------------------------------------------------------------------------------------------
+IMC  --  ITEM MANAGEMENT
+  decodes: -- no column --
+  values:  22
+--------------------------------------------------------------------------------------------------------------
+  ITEM MANAGEMENT CODE (IMC): A CODE DENOTING WHETHER ITEMS OF SUPPLY SHALL BE SUBJECTED TO INTEGRATED
+  MANAGEMENT UNDER THE DEFENSE SUPPLY AGENCY OR RETAINED BY THE INDIVIDUAL MILITARY SERVICE OR OTHER
+  DEPARTMENT OF DEFENSE COMPONENTS FOR THEIR MANAGEMENT. ASSIGNED BY THE ACTIVITY RESPONSIBLE FOR ITEM
+  MANAGEMENT CODING. SEE VOLUME 10, TABLES 77 AND 143 AND QUICK INFO ON-LINE.
+
+    A       NUCLEAR HARDENED ITEMS
+    B       PERFORMANCE BASED LOGISTICS OR CONTRACTOR LOGISTICS SUPPORT
+    C       ENGINEER/DESIGN/CRITICAL
+    D       MAJOR END ITEMS OF EQUIPMENT
+    E       REPARABLES
+    F       SINGLE AGENCY
+    G       FIELD LEVEL REPARABLE
+    H       NATIONALLY VITAL PROGRAM
+    J       DESIGN UNSTABLE
+    L       FABRICATED OR RECLAIMED ITEMS
+    M       ITEMS REQUIRING PROCUREMENT CAPABILITY OUTSIDE THE U.S.A
+    N       MODIFICATION/ALTERATION/CONVERSION SETS OR KITS INTENDED FOR ONE-TIME USE
+    P       NUCLEAR PROPULSION ITEMS
+    Q       SPECIAL WAIVERS
+    R       UNIQUE IN DESIGN TO MILITARY ITEM ESSENTIAL TO WEAPON SYSTEM OPERATION
+    S       SECURITY CLASSIFIED ITEMS
+    T       SET TO TRANSFER
+    V       NON-PROCURED
+    W       FOREIGN MILITARY SALES (FMS) ONLY
+    X       ITEMS NOT REVIEWED
+    Y       TERMINAL FAMILY
+    Z       INTEGRATED MANAGEMENT
+
+
+--------------------------------------------------------------------------------------------------------------
+INC_STATUS  --  STATUS
+  decodes: -- no column --
+  values:  5
+--------------------------------------------------------------------------------------------------------------
+  STATUS CODE: A ONE POSITION ALPHA CODE WHICH DENOTES THE CURRENT STATUS OF A DATA ELEMENT CONTAINED IN
+  EITHER THE NAME OR FEDERAL SUPPLY CLASS MASTER OR VALIDATION FILES.
+
+    A       ACTIVE
+    C       CANCELLED
+    E       EFFECTIVE DATED
+    P       CONTROLS PUBLISHING OF DATA ON CANCELLED
+    R       REINSTATEMENT OF AMMO CODE
+
+
+--------------------------------------------------------------------------------------------------------------
+INTEG  --  INTEGRITY
+  decodes: -- no column --
+  values:  3
+--------------------------------------------------------------------------------------------------------------
+  INTEGRITY CODE: A CODE WHICH INDICATES THAT A NSN HAS BEEN SELECTED AND REVIEWED BY MILITARY TRAFFIC
+  MANAGEMENT COMMAND (MTMC) TO ENSURE THAT THE FREIGHT CLASSIFICATION DATA IS CORRECT. THE INTEGRITY CODE CAN
+  ONLY BE SUBMITTED BY MTMC. SEE VOLUME 10, TABLE 176 AND QUICK INFO ON-LINE.
+
+    A       FREIGHT CLASSIFICATION DATA CORRECT
+    B       DEVELOPED PRIOR TO SDDC SAMPLING
+    C       DEVELOPED AFTER SDDC SAMPLING
+
+
+--------------------------------------------------------------------------------------------------------------
+INTER_CONT  --  INTERMEDIATE CONTAINER
+  decodes: -- no column --
+  values:  88
+--------------------------------------------------------------------------------------------------------------
+  INTERMEDIATE CONTAINER CODE: A TWO POSITION ALPHANUMERIC CODE THAT INDICATES A CONTAINER WHICH HOLDS TWO OR
+  MORE UNIT PACKS OF IDENTICAL ITEMS. IN ACCORDANCE WITH DOD 4100.39-M, VOLUME 10, TABLE 182 AND
+  MIL-STD-2073-1E, APPENDIX J, TABLE J.VII.
+
+  88 values -- too many to list. Query:
+      SELECT value, meaning FROM code_decode WHERE field = 'INTER_CONT' ORDER BY value;
+
+--------------------------------------------------------------------------------------------------------------
+IRRC  --  ISSUE, REPAIR, REQUISITION RESTRICTION
+  decodes: -- no column --
+  values:  44
+--------------------------------------------------------------------------------------------------------------
+  ISSUE, REPAIR AND/OR REQUISITIONING RESTRICTION CODE (IRR: A CODE THAT INDICATES RESTRICTIONS ON ISSUING OR
+  INSTRUCTIONS FOR REQUISTIONING, ITEM REPAIR/OVERHAUL, TURN-IN, EXCHANGE OR DISPOSAL.SEE VOLUME 10, TABLE 95
+  AND QUICK INFO ON-LINE.SEE VOLUME 10, TABLE 95 AND QUICK INFO ON-LINE.
+
+    00      NO RESTRICTION
+    AD      REPAIRABLE/CONSUMABLE ITEM REQUIRING CUSTODIAN SIGNATURE CONTROL
+    AE      NAVEDTRAPRODEVCEN
+    AF      NAVSEA
+    AG      NAVAL TRAINING SYSTEMS CENTER
+    AH      NAVAL FACILITIES ENGINEERING AND EXPEDITIONARY WARFARE CENTER
+    AM      NAVICP MECH
+    AR      REPAIRABLE ITEM SUBJECT TO CENTRALLY MANAGED REWORK PROGRAM AT DESIGNATED SITES
+    AT      NAVCOMPT
+    AW      NAVPLANTTECHREPO
+    BE      MSC
+    BF      USCG ENGINEERING LOGISTICS CENTER
+    BJ      NSMSES
+    BL      NAVICP MECH
+    BM      NAVSPAWAR
+    BS      NAVICP PHIL
+    BV      CONTROLLED AMMUNITION ITEM
+    BW      FMSO MECHANICSBURG
+    BY      NAVFSSO
+    BZ      NAVRESSO
+    C0      CRITICAL ITEM
+    C1      TYPE 1 CRITICAL ITEM
+    C2      TYPE 2 CRITICAL ITEM
+    C3      TYPE 3 CRITICAL ITEM
+    CB      NAVSEA-CONTROLLED MATERIAL
+    CC      NAVELEXENGCEN
+    CF      FLEET CONTROL PROGRAM ITEMS
+    DV      NAVAL AIR TECHNICAL SERVICES FACILITY
+    R9      INTEGRATED MANAGER REPARABLE ITEM
+    TF      SUPERVISOR OF SHIPBUILDING USN
+    XA      NAVPRO PITTSFIELD, MA
+    XB      MAINTAIN RECORD OF SERIAL NUMBERS
+    XC      NAVPRO
+    XD      TECHNICAL DIRECTIVE CHANGE KIT IS A CONTROLLED ITEM AND REQUIRES SPECIAL MANAGEMENT
+    XE      REFER TO TECHNICAL INFORMATION CARD
+    XG      NAVPRO
+    XH      NAVAL AIR SYSTEMS COMMAND
+    XJ      SSPO
+    XL      NAVPLANTTECHREPO
+    XQ      NAVSEA
+    XR      NAVSEA
+    XS      NAVAL INTELLIGENCE COMMAND
+    XW      NAVAL UNDERWATER SYSTEMS CENTER
+    XZ      NAVAL UNDERWATER WARFARE ENGINEERING STATION
+
+
+--------------------------------------------------------------------------------------------------------------
+ISC  --  ITEM STANDARDIZATION
+  decodes: v_flis_standardization.ISC
+  values:  11
+--------------------------------------------------------------------------------------------------------------
+  ITEM STANDARDIZATION CODE (ISC): THE CODED REPRESENTATION OF THE ITEM STANDARDIZATION DECISION ON
+  INDIVIDUAL ITEMS. DECISIONS ARE BASED ON THE RULES AND PROCEDURES ESTABLISHED IN THE DEPARTMENT OF DEFENSE
+  STANDARDIZATION MANUAL 4120.24-M. SEE VOLUME 10, TABLES 91 AND 92 AND QUICK INFO ON-LINE.4120.24-M. SEE
+  VOLUME 10, TABLES 91 AND 92 AND QUICK INFO ON-LINE.
+
+    0       DEFENSE THREAT REDUCTION AGENCY
+    1       RESULT OF A FORMAL ITEM REDUCTION STUDY
+    2       DOES NOT REPLACE AN ITEM NOT AUTHORIZED FOR PROCUREMENT
+    3       ACCEPTED AS NOT AUTHORIZED FOR PROCUREMENT
+    5       NOT YET BEEN SUBJECT TO ITEM STANDARDIZATION
+    6       LITTLE OR NO POTENTIAL EXISTS FOR ELIMINATION
+    7       NATO USE ONLY
+    8       NATO USE ONLY
+    B       A NEW ITEM AUTHORIZED FOR PROCUREMENT
+    C       AN INTELLIGENT DECISION COULD NOT BE MADE
+    E       NO LONGER AUTHORIZED FOR PROCUREMENT
+
+
+--------------------------------------------------------------------------------------------------------------
+IUID_INDICATOR  --  ITEM UNIQUE IDENTIFICATION
+  decodes: v_flis_identification.IUID_INDICATOR
+  values:  2
+--------------------------------------------------------------------------------------------------------------
+  A CODE THAT IDENTIFIES THAT THE ITEM IS REQUIRED TO BE SPECIFICALLY MARKED IAW MIL-STD-130M "IDENTIFICATION
+  MARKING OF U.S. MILITARY PROPERTY" AND MANAGED AS REQUIRED BY DOD 4140.1-R "DOD SUPPLY CHAIN MATERIEL
+  MANAGEMENT REGULATION", DODI 8320-04 "ITEM UNIQUE IDENTIFICATION (IUID) STANDARDS FOR TANGIBLE PERSONAL
+  PROPERTY" AND DODI 4151.19 "SERIALIZED ITEM MANAGEMENT (SIM) FOR MATERIEL MAINTENANCE".
+
+    N       NOT REQUIRED
+    Y       REQUIRED
+
+
+--------------------------------------------------------------------------------------------------------------
+LCL  --  LESS THAN CAR LOAD RATING
+  decodes: -- no column --
+  values:  20
+--------------------------------------------------------------------------------------------------------------
+  LESS THAN CARLOAD RATING CODE: A CODE DENOTING THE LESS THAN CARLOAD RATING APPLICABLE TO THE RECORDED ITEM
+  OF SUPPLY UNDER UNIFORM FREIGHT CLASSIFICATION.SEE VOLUME 10, TABLE 215 AND QUICK INFO ON-LINE.SEE VOLUME
+  10, TABLE 215 AND QUICK INFO ON-LINE.
+
+    A       400.0
+    B       300.0
+    C       250.0
+    D       200.0
+    E       175.0
+    F       150.0
+    G       125.0
+    H       110.0
+    J       100.0
+    K       92.5
+    M       85.0
+    P       77.5
+    Q       70.0
+    R       65.0
+    S       60.0
+    T       55.0
+    U       50.0
+    V       BELOW 50.0
+    W       RATING VARIABLE
+    X       500.0
+
+
+--------------------------------------------------------------------------------------------------------------
+LST_KWN_SOS  --  SOURCE OF SUPPLY
+  decodes: v_flis_identification.LST_KWN_SOS
+  values:  238
+--------------------------------------------------------------------------------------------------------------
+  SOURCE OF SUPPLY (SOS) CODE: A CODE /MILITARY STANDARD REQUISITIONING AND ISSUE PROCEDURES (MILSTRIP)
+  ROUTING IDENTIFIER CODE/ WHICH IDENTIFIES THE ACTIVITY AS A POTENTIAL SOURCE OF SUPPLY USED IN THE
+  AUTOMATIC DIGITAL NETWORK TO AUTOMATICALLY ROUTE MILSTRIP REQUISITIONS. THE FIELD IS REFLECTED IN 3 PARTS
+  OF THE RECORD, FOR THE ARMY, NAVY AND AIR FORCE. SEE VOLUME 10, TABLES 103 AND 113 AND QUICK INFO ON-LINE.
+
+  238 values -- too many to list. Query:
+      SELECT value, meaning FROM code_decode WHERE field = 'LST_KWN_SOS' ORDER BY value;
+
+--------------------------------------------------------------------------------------------------------------
+LTL  --  NATIONAL MOTOR FREIGHT CLASS RATING
+  decodes: -- no column --
+  values:  20
+--------------------------------------------------------------------------------------------------------------
+  NATIONAL MOTOR FREIGHT CLASS RATING CODE: A CODE DENOTING THE CLASS RATING APPLICABLE TO THE RECORDED ITEM
+  OF SUPPLY UNDER THE NATIONAL MOTOR FREIGHT CLASSIFICATION SYSTEM.SEE VOLUME 10, TABLE 86 AND QUICK INFO
+  ON-LINE.
+
+    A       400.0
+    B       300.0
+    C       250.0
+    D       200.0
+    E       175.0
+    F       150.0
+    G       125.0
+    H       110.0
+    J       100.0
+    K       92.5
+    M       85.0
+    P       77.5
+    Q       70.0
+    R       65.0
+    S       60.0
+    T       55.0
+    U       50.0
+    W       RATING VARIABLE
+    X       500.0
+    Z       NO RATING
+
+
+--------------------------------------------------------------------------------------------------------------
+LVL_A  --  PACKING REQUIREMENT
+  decodes: -- no column --
+  values:  7
+--------------------------------------------------------------------------------------------------------------
+  PACKING REQUIREMENT CODE: A ONE POSITION ALPHANUMERIC CODE THAT INDICATES THE TYPE OF SHIPPING CONTAINER
+  REQUIRED FOR LEVEL A MAXIMUM PACKING PROTECTION. IN ACCORDANCE WITH DOD 4100.39-M, VOLUME 10, TABLE 182 AND
+  MIL-STD-2073-1E, APPENDIX J, TABLE J.IX.
+
+    2       CLEATED PLYWOOD BOXES OVERSEAS TYPE
+    B       ASTM-D6251
+    C       CLEATED PLYWOOD WOOD BOXES
+    E       REQUIREMENTS OF ASTM-D4169
+    F       PACKING IS NOT REQUIRED
+    Q       TABLE C.II
+    Z       SPECIAL REQUIREMENT
+
+
+--------------------------------------------------------------------------------------------------------------
+LVL_B  --  PACKING REQUIREMENT
+  decodes: -- no column --
+  values:  10
+--------------------------------------------------------------------------------------------------------------
+  PACKING REQUIREMENT CODE: A ONE POSITION ALPHANUMERIC CODE THAT INDICATES THE TYPE OF SHIPPING CONTAINER
+  REQUIRED FOR LEVEL B INTERMEDIATE PACKING PROTECTION. IN ACCORDANCE WITH DOD 4100.39-M, VOLUME 10, TABLE
+  182 AND MIL-STD-2073-1E, APPENDIX J, TABLE J.IXA.
+
+    7       CLEATED PLYWOOD BOXES
+    8       LEVEL A PACKING REQUIREMENTS
+    A       FIBERBOARD BOXES WEATHER RESISTANT
+    F       PACKING IS NOT REQUIRED
+    H       BOXES FABRICATED WITH ASTM-D5118
+    P       OPEN WOOD CRATES
+    Q       TABLE C.II
+    R       REQUIREMENTS OF ASTM-D4169
+    T       FIBERBOARD CONTAINERS
+    Z       SPECIAL REQUIREMENT
+
+
+--------------------------------------------------------------------------------------------------------------
+LVL_C  --  PACKING REQUIREMENT
+  decodes: -- no column --
+  values:  7
+--------------------------------------------------------------------------------------------------------------
+  PACKING REQUIREMENT CODE: A ONE POSITION ALPHANUMERIC CODE THAT INDICATES THE TYPE OF SHIPPING CONTAINER
+  REQUIRED FOR LEVEL C MINIMAL PACKING PROTECTION. IN ACCORDANCE WITH DOD 4100.39-M, VOLUME 10, TABLE 182 AND
+  MIL-STD-2073-1E, APPENDIX J, TABLE J.IXB.
+
+    6       PERFORMANCE TEST REQUIREMENTS
+    8       LEVEL A PACKING
+    9       LEVEL B PACKING
+    F       PACKING IS NOT REQUIRED
+    L       FIBERBOARD BOXES
+    U       ITEMSTHAT REQUIRE PACKING
+    Z       SPECIAL REQUIREMENT
+
+
+--------------------------------------------------------------------------------------------------------------
+MATCAT_1  --  MAJOR MATERIEL CATEGORY
+  decodes: -- no column --
+  values:  21
+--------------------------------------------------------------------------------------------------------------
+  MAJOR MATERIEL CATEGORY CODE, ARMY: A CODE WHICH WILL IDENTIFY THE MAJOR MATERIEL CATEGORIES OF PRINCIPAL
+  AND SECONDARY MANAGER, NATIONAL INVENTORY CONTROL POINT, OR ARMY CLASS MANAGER ACTIVITY WHICH EXERCISES
+  WORLDWIDE MANAGERIAL RESPONSIBILITY. SEE VOLUME 10, TABLE 65 AND QUICK INFO ON-LINE.
+
+    B       GROUND FORCES SUPPORT MATERIEL
+    C       MEDICAL/DENTAL MATERIEL
+    D       SINGLE MANAGER AMMUNITION
+    E       GENERAL SUPPLIES
+    F       CLOTHING, TEXTILES & NON-MEDICAL TOILETRIES
+    G       COMMUNICATIONS AND ELECTRONICS EQUIPMENT
+    H       AIRCRAFT
+    J       GROUND FORCES SUPPORT MATERIEL
+    K       TACTICAL AND SUPPORT VEHICLES
+    L       MISSILES
+    M       AMMUNITION WEAPONS
+    P       CRYPTOLOGIC MATERIEL
+    Q       ELECTRONICS MATERIEL
+    R       BULK AND PACKAGED PETROLEUM FUELS
+    S       SUBSISTENCE
+    T       INDUSTRIAL SUPPLIES
+    U       COMSEC MATERIEL
+    V       AUDIO AND VISUAL EQUIPMENT
+    W       UNITED STATES SPECIAL OPERATIONS COMMAND
+    X       BAM SIMULATORS AND TRAINING DEVICES
+    Z       ARMY NON-STANDARD MATERIAL
+
+
+--------------------------------------------------------------------------------------------------------------
+MATCAT_2  --  MATERIAL CATEGORY APPROPRIATION AND SUBGROUP
+  decodes: -- no column --
+  values:  19
+--------------------------------------------------------------------------------------------------------------
+  ARMY MATERIAL CATEGORY APPROPRIATION AND SUBGROUP CODE: AN ALPHANUMERIC CODE DESIGNATING APPROPRIATION AND
+  SUBGROUPING. POSITION 2
+
+    2       STOCK FUND SECONDARY ITEMS
+    3       O&MA SECONDARY ITEMS
+    5       O&MA MAJOR END ITEMS
+    9       BASE SPARES
+    A       AIRCRAFT
+    B       MODIFICATION OF AIRCRAFT
+    C       AIRCRAFT SUPPORT EQUIPMENT AND FACILITIES
+    D       ANTI-BALLISTIC MISSILE SYSTEM
+    E       OTHER MISSILES
+    F       MODIFICATION OF MISSILES
+    G       OTHER MISSILES SUPPORT EQUIPMENT AND FACILITIES
+    H       TRACKED COMBAT VEHICLES
+    J       WEAPONS AND OTHER COMBAT VEHICLES
+    K       AMMUNITION
+    L       TACTICAL VEHICLES
+    M       COMMERCIAL VEHICLES
+    N       COMMUNICATIONS AND ELECTRONICS EQUIPMENT
+    P       COMMUNICATIONS AND ELECTRONICS EQUIPMENT
+    Q       OTHER SUPPORT EQUIPMENT
+
+
+--------------------------------------------------------------------------------------------------------------
+MATCAT_3  --  MATERIEL CATEGORY DESCRIPTION AND USAGE
+  decodes: -- no column --
+  values:  4
+--------------------------------------------------------------------------------------------------------------
+  ARMY MATERIEL CATEGORY DESCRIPTION AND USAGE CODE: A NUMERIC CODE THAT DESIGNATES A DESCRIPTION AND USE
+  CODE. POSITION 3
+
+    1       REPARABLE ITEMS
+    2       NONREPARABLE ITEMS
+    3       INSURANCE ITEMS
+    4       PROVISIONING ITEMS
+
+
+--------------------------------------------------------------------------------------------------------------
+MATCAT_4_5  --  MATERIEL CATEGORY SUBGROUP
+  decodes: -- no column --
+  values:  814
+--------------------------------------------------------------------------------------------------------------
+  ARMY MATERIEL CATEGORY SUBGROUP CODE ONE: AN ALPHANUMERIC CODE THAT DESIGNATES A SUBGROUP. POSITIONS 4 AND
+  5.
+
+  814 values -- too many to list. Query:
+      SELECT value, meaning FROM code_decode WHERE field = 'MATCAT_4_5' ORDER BY value;
+
+--------------------------------------------------------------------------------------------------------------
+MEC  --  MANAGEMENT ECHELON
+  decodes: -- no column --
+  values:  9
+--------------------------------------------------------------------------------------------------------------
+  ECHELON CODE MARINE CORPS: A CODE WHICH FURTHER DEFINES THE MATERIEL MANAGEMENT CODE MARINE CORPS. SEE
+  VOLUME 10, TABLE 54 AND QUICK INFO ON-LINE.
+
+    1       ALL MARINE CORPS-MANAGED ITEMS WHICH HAVE NOT BEEN ASSIGNED TO INTEGRATED MATERIEL MANAGEMENT
+    2       RECOVERABILITY CODE D ITEMS WHICH THE INTEGRATED MANAGER HAS NOT DECONTROLLED
+    3       ALL MARINE CORPS-MANAGED ITEMS MANAGED BY THE ICP ON A SYSTEM-WIDE RESTRICTIVE BASIS
+    4       MARINE CORPS /DEFENSE/ INTEGRATED MATERIEL MANAGER (IMM/IMM)
+    5       NON-STANDARD, NON-STOCK TYPE ITEMS. NO SYSTEM OR ICP-CONTROLLED REQUIREMENTS EXISTS
+    6       WEAPON SYSTEM-ORIENTED CONSUMABLE ITEMS ASSIGNED TO ANOTHER SERVICE/AGENCY
+    7       ASSIGNED TO ANOTHER SERVICE/AGENCY
+    8       ASSIGNED TO MARINE CORPS WHICH ARE MANAGED BY THE ICP ON A COMPLEX BASIS
+    9       ASSIGNED TO MARINE CORPS WHICH ARE MANAGED BY THE ICP ON A SYSTEM-WIDE BASIS
+
+
+--------------------------------------------------------------------------------------------------------------
+MMAC  --  MATERIEL MANAGEMENT AGGREGATION
+  decodes: -- no column --
+  values:  479
+--------------------------------------------------------------------------------------------------------------
+  MATERIEL MANAGEMENT AGGREGATION CODE (MMAC), AIR FORCE: A TWO POSITION ALPHABETIC CODE /AA THROUGH ZZ/
+  AUTHORIZED TO IDENTIFY SPECIFIC ITEMS /NATIONAL STOCK NUMBER/ TO BE MANAGED BY A SPECIFIC MANAGER. THESE
+  CODES APPLY TO /1/ SYSTEMS /2/ PROGRAMS /3/ AGGREGATION OF RELATED EQUIPMENT AND /4/ SELECTED FEDERAL
+  SUPPLY CLASSES. SEE VOLUME 10, TABLE 66 AND QUICK INFO ON-LINE.
+
+  479 values -- too many to list. Query:
+      SELECT value, meaning FROM code_decode WHERE field = 'MMAC' ORDER BY value;
+
+--------------------------------------------------------------------------------------------------------------
+MOE_CD  --  MAJOR ORGANIZATIONAL ENTITY
+  decodes: -- no column --
+  values:  174
+--------------------------------------------------------------------------------------------------------------
+  MAJOR ORGANIZATIONAL ENTITY (MOE) CODE: A CODE REPRESENTING THE SUBDIVISION OF A U.S. GOVERNMENTAL
+  ORGANIZATION OR AN AGENCY OF THE NORTH ATLANTIC TREATY ORGANIZATION NATIONS, OTHER FRIENDLY GOVERNMENTS AND
+  INTERNATIONAL ORGANIZATIONS PARTICIPATING IN THE FEDERAL CATALOG PROGRAM. SEE VOLUME 10, TABLES 51 AND 174
+  AND QUICK INFO ON-LINE.SEE VOLUME 10, TABLES 51 AND 174 AND QUICK INFO ON-LINE.
+
+  174 values -- too many to list. Query:
+      SELECT value, meaning FROM code_decode WHERE field = 'MOE_CD' ORDER BY value;
+
+--------------------------------------------------------------------------------------------------------------
+MOP  --  METHOD OF PRESERVATION
+  decodes: -- no column --
+  values:  36
+--------------------------------------------------------------------------------------------------------------
+  METHOD OF PRESERVATION CODE: A TWO POSITION ALPHANUMERIC CODE THAT DEFINES THE PREVENTIVE MEASURES TO
+  PROTECT FROM DETERIORATION RESULTING FROM EXPOSURE TO ATMOSPHERIC CONDITIONS DURING STORAGE AND SHIPMENT.
+  IN ACCORDANCE WITH DOD 4100.39-M, VOLUME 10, TABLE 182 AND MIL-STD-2073-1E, APPENDIX A, TABLE A.IV AND
+  APPENDIX J, TABLES J.I AND J.IA.
+
+    10      NUMERIC
+    20      NUMERIC
+    30      NUMERIC
+    31      WATERPROOF BAG SEALED
+    32      CONTAINER WATERPROOF BAG SEALED
+    33      GREASEPROOF-WATERPROOF BAG SEALED
+    40      NUMERIC
+    41      WATERVAPORPROOF BAG SEALED
+    42      CONTAINER WATERVAPORPROOF BAG SEALED
+    43      FLOATING WATERVAPORPROOF BAG SEALED
+    44      RIGID CONTAINER (OTHER THAN METAL) SEALED
+    45      RIGID METAL CONTAINER SEALED
+    50      NUMERIC
+    51      WATERVAPORPROOF BAG SEALED
+    52      CONTAINER WATERVAPORPROOF BAG SEALED
+    53      FLOATING WATERVAPORPROOF BAG SEALED
+    54      RIGID CONTAINER (OTHER THAN METAL) SEALED
+    55      RIGID METAL CONTAINER SEALED
+    AE      SEAL OR PLUG ALL OPENINGS
+    AH      FOG SPRAY OR FLUSH INTERNALLY
+    AU      PRESERVATIVE COMPOUNDS SHALL NOT BE APPLIED TO WINDINGS
+    AW      SEAL IN BAGS
+    BC      COAT ALL PIECES OF SET
+    BD      REMOVE PARTS MADE OF RUBBER FIBER OR NON-METALLIC
+    BL      PLUG OR SEAL ALL OPENINGS
+    DB      PRESERVE IN TRANSPARENT BARRIER BAG
+    DC      PRESERVE IN TRANSPARENT BARRIER WRAP
+    DR      INTERNAL FLUID-CARRYING PASSAGES FILLED WITH PRESERVATIVELE
+    DW      ITEM SHALL BE CLEANED WRAPPED BLOCKED AND BRACED
+    EK      SHANK AND THREADS PROTECTED
+    GS      TRANSPARENT FLEXIBLE SEALABLE VOLATILE CORROSION INHIBITOR TREATED BAG
+    GX      WRAPPED IN MATERIAL
+    HM      PERFORMANCE ORIENTED PACKAGING
+    JF      PRESERVED IN A VACUUM FORMED SKIN PACK
+    KF      CLEAN EACH ITEM
+    ZZ      SEE J.4.1.B.
+
+
+--------------------------------------------------------------------------------------------------------------
+NIIN_STATUS_CODE  --  NATIONAL ITEM IDENTIFICATION NUMBER STATUS
+  decodes: -- no column --
+  values:  14
+--------------------------------------------------------------------------------------------------------------
+  NIIN STATUS CODE: A CODE WHICH DENOTES THE CURRENT STATUS OF A NATIONAL ITEM IDENTIFICATION NUMBER /NIIN/.
+  SEE VOLUME 10, TABLE 18 AND QUICK INFO ON-LINE.QUICK INFO ON-LINE.
+
+    0       ACTIVE
+    1       RESTRICTED TO (NATO/FC) USE ONLY
+    3       CANCELLED WITH REPLACEMENT
+    4       CANCELLED WITHOUT REPLACEMENT
+    5       CANCELLED-USE
+    6       INACTIVE
+    7       CANCELLED AS DUPLICATE
+    8       CANCELLED-INACTIVE
+    9       NONPROCURABLE
+    A       NIIN IS AVAILABLE FOR MANUAL ASSIGNMENT
+    B       NIIN IS ALLOCATED FOR MANUAL ASSIGNMENT
+    C       NIIN IS TENTATIVELY ASSIGNED TO ITEM IN PROCESS
+    R       RE-USE
+    S       SECURITY CLASSIFIED
+
+
+--------------------------------------------------------------------------------------------------------------
+NIIN_STAT_CD  --  NATIONAL ITEM IDENTIFICATION NUMBER STATUS
+  decodes: v_flis_cancelled_niin.NIIN_STAT_CD (+1)
+  values:  14
+--------------------------------------------------------------------------------------------------------------
+  NIIN STATUS CODE: A CODE WHICH DENOTES THE CURRENT STATUS OF A NATIONAL ITEM IDENTIFICATION NUMBER /NIIN/.
+  SEE VOLUME 10, TABLE 18 AND QUICK INFO ON-LINE.QUICK INFO ON-LINE.
+
+    0       ACTIVE
+    1       RESTRICTED TO (NATO/FC) USE ONLY
+    3       CANCELLED WITH REPLACEMENT
+    4       CANCELLED WITHOUT REPLACEMENT
+    5       CANCELLED-USE
+    6       INACTIVE
+    7       CANCELLED AS DUPLICATE
+    8       CANCELLED-INACTIVE
+    9       NONPROCURABLE
+    A       NIIN IS AVAILABLE FOR MANUAL ASSIGNMENT
+    B       NIIN IS ALLOCATED FOR MANUAL ASSIGNMENT
+    C       NIIN IS TENTATIVELY ASSIGNED TO ITEM IN PROCESS
+    R       RE-USE
+    S       SECURITY CLASSIFIED
+
+
+--------------------------------------------------------------------------------------------------------------
+NIMSC  --  NONCONSUMABLE ITEM MATERIAL SUPPORT
+  decodes: -- no column --
+  values:  25
+--------------------------------------------------------------------------------------------------------------
+  NONCONSUMABLE ITEM MATERIAL SUPPORT CODE: A CODE DESIGNATING THE DEGREE OF SUPPORT RECEIVED BY AN
+  INDIVIDUAL SECONDARY INVENTORY CONTROL ACTIVITY OR TO IDENTIFY THE SERVICE(S) PERFORMING DEPOT MAINTENANCE
+  FOR A LEAD SERVICE (PRIMARY INVENTORY CONTROL ACTIVITY). SEE VOLUME 10, TABLE 107, AND QUICK INFO
+  ON-LINE.CONTROL ACTIVITY). SEE VOLUME 10, TABLE 107, AND QUICK INFO ON-LINE.
+
+    0       WHOLESALE INTER-SERVICE SUPPLY SUPPORT AGREEMENT (LOA 8D ONLY)
+    1       EXCEPTION ITEM (END ITEM OF EQUIPMENT)
+    2       EXCEPTION ITEM (DEPOT REPARABLE COMPONENT OR SICA MANAGED CONSUMABLE)
+    3       END ITEM PRIMARY INVENTORY CONTROL ACTIVITY
+    4       DEPOT REPARABLE COMPONENT (TYPE I TEMPORARY)
+    5       DEPOT REPARABLE COMPONENT (TYPE II)
+    6       REQUISITIONING ACTIVITY FUNDED ITEMS
+    7       JOINT CONVENTIONAL AMMUNITION PRODUCTION COGNIZANCE
+    8       DEPOT REPARABLE COMPONENT (TYPE I)
+    9       EXCEPTION ITEM (DEPOT MAINTENANCE REVIEW NOT COMPLETED)
+    A       ARMY
+    B       MULTI-SERVICE ORGANIC REPAIR
+    D       DLA/DGSC PROVIDES DEPOT MAINTENANCE SUPPORT
+    E       EXCESS OVERFLOW WHICH IS CONTRACTED BY THE PICA
+    F       AIR FORCE
+    G       GSA ACTIVITY
+    J       JCAP COGNIZANCE
+    M       MARINE CORPS
+    P       TOTAL DEPOT MAINTENANCE IS BEING ACCOMPLISHED BY COMMERCIAL CONTRACT
+    S       ORGANIC OVERFLOW TO ANOTHER SERVICE(S) POSSESSING ORGANIC CAPABILITY
+    T       FEDERAL AVIATION ADMINISTRATION
+    U       UNASSIGNED
+    V       NAVY
+    W       NATIONAL WEATHER SERVICE
+    X       ALL OTHER CONDITIONS
+
+
+--------------------------------------------------------------------------------------------------------------
+OPI  --  OPTIONAL PROCEDURE INDICATOR
+  decodes: -- no column --
+  values:  5
+--------------------------------------------------------------------------------------------------------------
+  OPTIONAL PROCEDURE INDICATOR CODE: A ONE POSITION ALPHA CODE THAT INDICATES THE ALLOWABLE DEVIATIONS FROM
+  THE PRESCRIBED REQUIREMENTS. IN ACCORDANCE WITH DOD 4100.39-M, VOLUME 10, TABLE 182 AND MIL-STD-2073-1E,
+  APPENDIX J, TABLE J.VIIIA.
+
+    A       PROCEDURAL SPECIFICATION
+    E       CERTAIN OPTIONS CAN BE EXERCISED
+    M       PACKAGING DATA IS MANDATORY
+    O       OPTIONS CAN BE EXERCISED
+    P       FOR SPECIAL PACKAGING INSTRUCTION ITEMS
+
+
+--------------------------------------------------------------------------------------------------------------
+ORIG_STDZN_DEC  --  ORIGINATOR OF STANDARDIZATION DECISION
+  decodes: v_flis_standardization.ORIG_STDZN_DEC
+  values:  461
+--------------------------------------------------------------------------------------------------------------
+  ORIGINATOR OF STANDARDIZATION DECISION: IDENTIFIES THE ACTIVITY THAT IS RESPONSIBLE FOR THE ASSIGNMENT OF
+  ITEM STANDARDIZATION CODES TO RECORD STANDARDIZATION DECISIONS. COMPUTER GENERATED FROM THE ORIGINATING
+  ACTIVITY CODE /DRN 4210/ WHICH IS INCLUDED IN THE INPUT HEADER.
+
+  461 values -- too many to list. Query:
+      SELECT value, meaning FROM code_decode WHERE field = 'ORIG_STDZN_DEC' ORDER BY value;
+
+--------------------------------------------------------------------------------------------------------------
+OTC
+  decodes: -- no column --
+  values:  5
+--------------------------------------------------------------------------------------------------------------
+  NO CODE (SPACE/BLANK) ITEMS HAVE NOT BEEN EVALUATED FOR OPERATIONAL TEST CODE ASSIGNMENT.
+
+            NO CODE (SPACE/BLANK) ITEMS HAVE NOT BEEN EVALUATED FOR OPERATIONAL TEST CODE ASSIGNMENT.
+    0       DO NOT REQUIRE THE PERFORMANCE OF SPECIAL PROCEDURES
+    1       MECHANIZATION OF WAREHOUSING AND SHIPMENT PROCESSING
+    2       SPECIAL HANDLING SUSPENSE ROUTINE
+    3       ALL ITEMS REQUIRING CALIBRATION
+
+
+--------------------------------------------------------------------------------------------------------------
+PCC  --  PHYSICAL CATEGORY
+  decodes: -- no column --
+  values:  8
+--------------------------------------------------------------------------------------------------------------
+  PHYSICAL CATEGORY CODE: A CODE THAT INDICATES PHYSICAL CATEGORY FOR PICKING, PACKING AND MARKING ITEMS FOR
+  SHIPMENT. SEE VOLUME 10, TABLE 124AND QUICK INFO ON-LINE.AND QUICK INFO ON-LINE.
+
+    1       BIN
+    2       BULK
+    3       TWO-WHEELED VEHICLE
+    4       ALL OTHER WHEELED VEHICLES
+    5       TRACKED VEHICLES UP TO 10 TON
+    6       TRACKED VEHICLES FROM 10 TO 30 TON
+    7       TRACKED VEHICLES FROM 30 TO 60 TON
+    8       AAV
+
+
+--------------------------------------------------------------------------------------------------------------
+PICA  --  PRIMARY INVENTORY CONTROL ACTIVITY
+  decodes: -- no column --
+  values:  461
+--------------------------------------------------------------------------------------------------------------
+  PRIMARY INVENTORY CONTROL ACTIVITY (PICA): A CODE INDICATING THE PRINCIPAL SUPPLY CONTROL ACTIVITY
+  RESPONSIBLE FOR ESTABLISHING STOCKAGE OBJECTIVES, CONTROLLING STOCKAGE OBJECTIVES AND MAINTAINING ITEM
+  ACCOUNTABILITY FOR AN ITEM OF SUPPLY. SHORT TITLE- PICA. FORMERLY-WHOLESALE INVENTORY MANAGER. IN
+  ACCORDANCE WITH DOD 4100.39-M, VOLUME 10, TABLE 103.
+
+  461 values -- too many to list. Query:
+      SELECT value, meaning FROM code_decode WHERE field = 'PICA' ORDER BY value;
+
+--------------------------------------------------------------------------------------------------------------
+PICA_LOA  --  PRIMARY INVENTORY CONTROL ACTY LEVEL OF AUTHORITY
+  decodes: -- no column --
+  values:  16
+--------------------------------------------------------------------------------------------------------------
+  PRIMARY INVENTORY CONTROL ACTY LEVEL OF AUTHORITY: A CODE THAT IDENTIFIES THE LEVELS OF AUTHORITY OF A
+  PRIMARY INVENTORY CONTROL ACTIVITY /PICA/. THE CODE INDICATES /1/ LOGISTICS MATERIEL MANAGEMENT, /2/ LEVEL
+  OF RESPONSIBILITY AND /3/ BASIS OF CATEGORIZATION. THE CODES WILL BE USED INTERNALLY WITHIN THE SYSTEM FOR
+  STATISTICS AND GENERAL MANAGEMENT DATA BASED ON MATERIEL MANAGEMENT RESPONSIBILITIES ASSIGNED BY
+  SERVICES/AGENCIES DIRECTIVES. SEE VO
+
+    01      DEFENSE LOGISTICS AGENCY
+    02      GENERAL SERVICES ADMINISTRATION
+    04      MILITARY SERVICE/DLA/GSA ACTIVITY
+    06      MILITARY SERVICE ACTIVITY ASSIGNED AS THE INTEGRATED MATERIEL MANAGER
+    07      DEFENSE SPECIAL WEAPONS AGENCY
+    08      DEFENSE LOGISTICS AGENCY INTEREST RECORDED
+    10      DLA ACTIVITY HAVING FEDERAL SYSTEM-WIDE INVENTORY CONTROL
+    11      GSA/CIVIL AGENCY
+    12      VETERANS ADMINISTRATION
+    15      DLA ACTIVITY ASSIGNED AS THE IMM
+    22      MILITARY SERVICE/DLA/CIVIL AGENCY ACTIVITY DESIGNATED AS THE LEAD SERVICE
+    23      DOD ACTIVITY ASSIGNED DOD-WIDE WHOLESALE INTEGRATED MATERIEL MANAGEMENT RESPONSIBILITY
+    26      DOD AGENCY
+    48      CIVIL AGENCY OR DEPARTMENT
+    81      FOREIGN GOVERNMENT
+    99      MILITARY SERVICE
+
+
+--------------------------------------------------------------------------------------------------------------
+PICA_SICA  --  PRIMARY INVENTORY CONTROL ACTIVITY OR SECONDARY INVENTORY CONTROL ACTIVITY
+  decodes: -- no column --
+  values:  2
+--------------------------------------------------------------------------------------------------------------
+  PRIMARY INVENTORY CONTROL ACTIVITY (PICA) OR SECONDARY INVENTORY CONTROL ACTIVITY (SICA): A ONE POSITION
+  ALPHA CODE THAT IDENTIFIES WHICH LEVEL OF INVENTORY CONTROL IS RESPONSIBLE FOR THE OVERALL PACKAGING DATA
+  REQUIREMENTS ASSIGNED A SPECIFIC NATIONAL STOCK NUMBER (NSN). IN ACCORDANCE WITH DOD 4100.39-M, VOLUME 10,
+  TABLE 182.
+
+    P       PRIMARY INVENTORY CONTROL ACTIVITY
+    S       SECONDARY INVENTORY CONTROL ACTIVITY
+
+
+--------------------------------------------------------------------------------------------------------------
+PKG_CAT  --  PACKAGING CATEGORY
+  decodes: -- no column --
+  values:  98
+--------------------------------------------------------------------------------------------------------------
+  PACKAGING CATEGORY CODE: A FOUR POSITION ALPHANUMERIC CODE USED TO GROUP ITEMS BY PHYSICAL/CHEMICAL,
+  WEIGHT/FRAGILITY, AND PRESERVATIVE CHARACTERISTICS. IN ACCORDANCE WITH DOD 4100.39-M, VOLUME 10, TABLE 182
+  AND MIL-STD-2073-1E, APPENDIX A, TABLES A.I, A.II, AND A.III.
+
+  98 values -- too many to list. Query:
+      SELECT value, meaning FROM code_decode WHERE field = 'PKG_CAT' ORDER BY value;
+
+--------------------------------------------------------------------------------------------------------------
+PKG_DATA_SOURCE  --  PACKAGING DATA SOURCE
+  decodes: -- no column --
+  values:  8
+--------------------------------------------------------------------------------------------------------------
+  PACKAGING DATA SOURCE CODE: A ONE POSITION ALPHA CODE THAT IDENTIFIES THE SOURCE FROM WHICH THE PACKAGING
+  DATA WERE OBTAINED OR RECEIVED. IN ACCORDANCE WITH DOD 4100.39-M, VOLUME 10, TABLE 182.
+
+    A       NOT MEET CURRENT MIL-STD-2073-1E FORMAT
+    C       DEPOT CARE OF SUPPLIES IN STORAGE
+    M       MANUFACTURER/CONTRACTOR
+    P       PRIMARY INVENTORY CONTROL ACTIVITY
+    R       DEPOT RECEIVING
+    S       SECONDARY INVENTORY CONTROL ACTIVITY
+    U       CONSUMABLE ITEM
+    X       VALIDATED CORRECTION
+
+
+--------------------------------------------------------------------------------------------------------------
+PMIC  --  PRECIOUS METALS INDICATOR
+  decodes: v_flis_identification.PMIC
+  values:  8
+--------------------------------------------------------------------------------------------------------------
+  PRECIOUS METALS INDICATOR CODE (PMIC): THIS CODE IS TO IDENTIFY ITEMS THAT HAVE PRECIOUS METALS AS PART OF
+  THEIR CONTENT. PRECIOUS METALS ARE THOSE METALS GENERALLY CONSIDERED TO BE UNCOMMON AND HIGHLY VALUABLE
+  WHICH ARE RELATIVELY SUPERIOR IN CERTAIN PROPERTIES SUCH AS RESISTANCE TO CORROSION AND ELECTRICAL
+  CONDUCTIVITY. THE PRECIOUS METALS RECOVERY PROGRAM FOR THE FEDERAL GOVERNMENT ENCOMPASSES GOLD, SILVER,
+  PLATINUM, AND THE PLATINUM FAMILY WHICH CONSISTS OF PALLADIUM, I
+
+    A       DOES NOT CONTAIN PRECIOUS METAL
+    C       CONTAINS COMBINATION OF TWO OR MORE PRECIOUS METALS
+    G       CONTAINS GOLD
+    P       CONTAINS PLATINUM FAMILY METALS
+    R       CONTAINS RHENIUM
+    S       CONTAINS SILVER
+    U       TYPE/CONTENT IS UNKNOWN
+    V       TYPE VARIES BETWEEN MANUFACTURERS
+
+
+--------------------------------------------------------------------------------------------------------------
+PRES_MAT  --  PRESERVATION MATERIAL
+  decodes: -- no column --
+  values:  30
+--------------------------------------------------------------------------------------------------------------
+  PRESERVATION MATERIAL CODE: A TWO POSITION ALPHANUMERIC CODE THAT IDENTIFIES THE MATERIAL USED TO PREVENT
+  OR INHIBIT CORROSION OR DETERIORATION OF AN ITEM. IN ACCORDANCE WITH DOD 4100.39-M, VOLUME 10, TABLE 182
+  AND MIL-STD-2073-1E, APPENDIX J, TABLE J.III.
+
+    00      NUMERIC
+    01      NUMERIC
+    02      NUMERIC
+    03      NUMERIC
+    06      NUMERIC
+    07      NUMERIC
+    09      NUMERIC
+    10      NUMERIC
+    11      GREASE AIRCRAFT AND INSTRUMENT
+    12      GREASE GENERAL PURPOSE
+    13      AUTOMOTIVE AND ARTILLERY
+    15      HYDRAULIC FLUID
+    17      LUBRICATING OIL LOW VOLATILITY
+    19      COLD APPLICATION TRANSPARENT NON-TACKY
+    20      NUMERIC
+    21      WATER DISPLACING SOFT FILM
+    30      NUMERIC
+    31      FOR RECIPROCATING AIRCRAFT ENGINES
+    32      FOR TURBOJET AIRCRAFT ENGINES
+    33      LUBRICATING OIL SYNTHETIC BASE
+    38      STRIPPABLE PLASTIC COATING
+    49      VENDOR'S PROTECTIVE GREASE OR OIL COATING
+    50      NUMERIC
+    51      LUBRICATING OIL JET ENGINE
+    52      CORROSION PREVENTIVE OIL
+    56      FOR AIRCRAFT TURBINE ENGINES
+    65      HYDRAULIC FLUID
+    80      NUMERIC
+    89      PRESERVE WITH NORMAL OPERATING LUBRICANT
+    ZZ      SPECIAL REQUIREMENT
+
+
+--------------------------------------------------------------------------------------------------------------
+PVC  --  PRICE VALIDATION
+  decodes: -- no column --
+  values:  7
+--------------------------------------------------------------------------------------------------------------
+  PRICE VALIDATION CODE, AIR FORCE: A CODE USED BY THE AIR FORCE TO INDICATE THE VALIDITY OF THE RECORDED
+  UNIT PRICE. SEE VOLUME 10, TABLE 177 AND QUICK INFO ON-LINE.RECORDED UNIT PRICE. SEE VOLUME 10, TABLE 177
+  AND QUICK INFO ON-LINE.
+
+    A       IS BEING ANALYZED
+    D       CONSIDERED TO BE EXCESSIVE
+    E       ESTIMATED PRICE
+    N       NOT BEEN ANALYZED OR REVIEWED FOR ACCURACY
+    P       NEGOTIATED PROVISIONED PRICE
+    V       ACCEPTED PRICE RANGE
+    X       PREVIOUS PRICE WAS ERRONEOUS
+
+
+--------------------------------------------------------------------------------------------------------------
+QUP  --  QUANTITY UNIT PACK
+  decodes: v_flis_management.QUP [deferred]
+  values:  34
+--------------------------------------------------------------------------------------------------------------
+  QUANTITY PER UNIT PACK (QUP) CODE: A CODE INDICATING THE NUMBER OF UNITS OF ISSUE IN THE UNIT PACKAGE AS
+  ESTABLISHED BY THE MANAGING ACTIVITY. SHORT TITLE, QUP. SEE VOLUME 10, TABLE 56 AND QUICK INFO ON-LINE.
+
+    0       NO QUP
+    1       1
+    2       2
+    3       3
+    4       4
+    5       5
+    6       6
+    7       7
+    8       8
+    9       9
+    A       10
+    B       12
+    C       15
+    D       16
+    E       18
+    F       20
+    G       24
+    H       25
+    J       32
+    K       36
+    L       48
+    M       50
+    N       72
+    P       75
+    Q       100
+    R       120
+    S       144
+    T       200
+    U       250
+    V       500
+    W       1000
+    X       BLK
+    Y       PACKAGER OPTIONS
+    Z       SPECIAL REQUIREMENTS
+
+
+--------------------------------------------------------------------------------------------------------------
+REPLACEMENT_FSC  --  FEDERAL SUPPLY CLASSIFICATION
+  decodes: -- no column --
+  values:  676
+--------------------------------------------------------------------------------------------------------------
+  FSC: A CODE WHICH IDENTIFIES THE SUPPLY CLASSIFICATION OF AN ITEM OF SUPPLY IDENTIFIED UNDER THE FEDERAL
+  CATALOGING PROGRAM, AN ITEM OF PRODUCTION AND/OR A HOMOGENEOUS AREA OF COMMODITIES IN RESPECT TO THEIR
+  PHYSICAL OR PERFORMANCE CHARACTERISTICS. THE FIRST TWO DIGITS IDENTIFY THE FEDERAL SUPPLY GROUP AND THE
+  LAST TWO DIGITS IDENTIFY THE SPECIFIC CLASS WITHIN THE SPECIFIED GROUP. THE COMBINATION OF THESE FOUR
+  DIGITS CONSTITUTE THE FEDERAL SUPPLY CLASSIFICATI
+
+  676 values -- too many to list. Query:
+      SELECT value, meaning FROM code_decode WHERE field = 'REPLACEMENT_FSC' ORDER BY value;
+
+--------------------------------------------------------------------------------------------------------------
+REP_REC_CODE  --  RECOVERABILITY/REPARABILITY
+  decodes: v_flis_management.REP_REC_CODE [deferred]
+  values:  56
+--------------------------------------------------------------------------------------------------------------
+  RECOVERABILITY/REPARABILITY CODE: A ONE POSITION ALPHA CODE, WHICH DENOTES THE EXPENDABILITY,
+  RECOVERABILITY, AND REPARABILITY OF AN ITEM. IN ACCORDANCE WITH DOD 4100.39-M, VOLUME 10, TABLES 57-MARINE
+  CORPS, 63-NAVY, 69-AIR FORCE, 87-ARMY, 128-COAST GUARD, 130-DLA, AND 163-USSOCOM.
+
+    A       NAVY
+    A       NAVY
+    A       NAVY
+    B       NAVY
+    C       ARMY
+    C       ARMY
+    C       ARMY
+    C       ARMY
+    D       NAVY
+    D       NAVY
+    D       NAVY
+    E       NAVY
+    F       NAVY
+    F       NAVY
+    F       NAVY
+    F       NAVY
+    G       NAVY
+    H       NAVY
+    H       NAVY
+    H       NAVY
+    H       NAVY
+    I       DLA
+    I       DLA
+    J       NAVY
+    K       NAVY
+    K       NAVY
+    L       ARMY
+    L       ARMY
+    L       ARMY
+    M       NAVY
+    N       NAVY
+    N       NAVY
+    N       NAVY
+    O       ARMY
+    O       ARMY
+    O       ARMY
+    O       ARMY
+    P       NAVY
+    P       NAVY
+    Q       NAVY
+    R       COAST GUARD
+    R       COAST GUARD
+    R       COAST GUARD
+    S       AIR FORCE ERRC ND2
+    S       AIR FORCE ERRC ND2
+    T       AIR FORCE ERRC XD2
+    T       AIR FORCE ERRC XD2
+    U       AIR FORCE ERRC NF2
+    U       AIR FORCE ERRC NF2
+    V       NAVY
+    W       NAVY
+    X       NAVY
+    Y       NAVY
+    Z       MARINE CORPS
+    Z       MARINE CORPS
+    Z       MARINE CORPS
+
+
+--------------------------------------------------------------------------------------------------------------
+RNAAC  --  REFERENCE NUMBER ACTION ACTIVITY
+  decodes: v_flis_part.RNAAC
+  values:  475
+--------------------------------------------------------------------------------------------------------------
+  REFERENCE NUMBER ACTION ACTIVITY CODE (RNAAC): A TWO POSITION ALPHANUMERIC CODE DESIGNATING THE ACTIVITY
+  WHICH HAS ACKNOWLEDGED THE POSSESSION OR NON-POSSESSION OF A DRAWING OR TECHNICAL DOCUMENTATION. IN
+  ACCORDANCE WITH DOD 4100.39-M, VOLUME 10, TABLE 104.
+
+  475 values -- too many to list. Query:
+      SELECT value, meaning FROM code_decode WHERE field = 'RNAAC' ORDER BY value;
+
+--------------------------------------------------------------------------------------------------------------
+RNCC  --  REFERENCE NUMBER CATEGORY
+  decodes: v_flis_part.RNCC
+  values:  12
+--------------------------------------------------------------------------------------------------------------
+  REFERENCE NUMBER CATEGORY CODE (RNCC): A CODE DESIGNATING THE RELATIONSHIP OF THE REFERENCE NUMBER TO THE
+  ITEM OF SUPPLY. SEE VOLUME 10, TABLES 6, 15, 31 AND 40 AND QUICK INFO ON-LINE.
+
+    1       SOURCE CONTROL REFERENCE
+    2       DEFINITIVE GOVERNMENT SPECIFICATION OR STANDARD DESIGNATOR REFERENCE
+    3       DESIGN CONTROL REFERENCE
+    4       NON-DEFINITIVE U.S. GOVERNMENT SPECIFICATION OR STANDARD REFERENCE
+    5       SECONDARY REFERENCE
+    6       INFORMATIVE REFERENCE
+    7       VENDOR ITEM DRAWING REFERENCE
+    8       US/NATO-REPRODUCED ITEM IDENTIFICATION NUMBER
+    A       DESIGN CATEGORY PACKAGING AND RELATED LOGISTICS DATA REFERENCE NUMBER
+    C       ADVISORY REFERENCE
+    D       DRAWING NUMBER REFERENCE
+    E       REPLACED REFERENCE NUMBER
+
+
+--------------------------------------------------------------------------------------------------------------
+RNFC  --  REFERENCE NUMBER FORMAT
+  decodes: v_flis_part.RNFC
+  values:  4
+--------------------------------------------------------------------------------------------------------------
+  REFERENCE NUMBER FORMAT CODE (RNFC): A CODE WHICH IDENTIFIES THE FORMAT MODE OF A LOGISTICS REFERENCE
+  NUMBER USED IN BOTH ENGINEERING AND LOGISTICS DATA SYSTEMS.SEE VOLUME 10, TABLE 1 AND QUICK INFO ON-LINE.
+
+    1       ORIGINATING DOCUMENT
+    3       NUMBER FORMAT IS UNKNOWN
+    4       IN-THE-CLEAR
+    5       CHANGE OF THE PART NUMBER BY CONVERSION
+
+
+--------------------------------------------------------------------------------------------------------------
+RNJC  --  REFERENCE NUMBER JUSTIFICATION
+  decodes: v_flis_part.RNJC
+  values:  4
+--------------------------------------------------------------------------------------------------------------
+  REFERENCE NUMBER JUSTIFICATION CODE: A CODE USED TO RECORD THE DEGREE OF RESEARCH CONDUCTED AND THE
+  JUSTIFICATION FOR ADDING A REFERENCE NUMBER, REINSTATEMENT OF AN ITEM IDENTIFICATION, OR ASSIGNMENT OF A
+  NEW NATIONAL ITEM IDENTIFICATION NUMBER DESPITE A RECOGNIZED CONDITION OF POSSIBLE DUPLICATION WITH AN
+  EXISTING ITEM. SEE VOLUME 10, TABLE 4AND QUICK INFO ON-LINE.
+
+    1       REFERENCE NUMBERSNOT ACCEPTABLE
+    2       CORRECTLY PROPOSED COLLABORATING ACTIVITIES HAVE NOT AGREED
+    4       DATA IS NOT AVAILABLE
+    7       OBSOLETE OR DISCONTINUED
+
+
+--------------------------------------------------------------------------------------------------------------
+RNSC  --  REFERENCE NUMBER STATUS
+  decodes: v_flis_part.RNSC
+  values:  10
+--------------------------------------------------------------------------------------------------------------
+  REFERENCE NUMBER STATUS CODE: A CODE DESIGNATING WHETHER A MANUFACTURER IS A SOURCE OF PROCUREMENT AND
+  WHETHER THE REFERENCE NUMBER IS REQUIRED FOR IDENTIFICATION IN THE PROCUREMENT INVITATION FOR BID. SEE
+  VOLUME 10, TABLE 17 AND QUICK INFO ON-LINE.
+
+    A       AUTHORIZED FOR PROCUREMENT
+    B       NOT AUTHORIZED FOR PROCUREMENT
+    C       DESCRIPTIVE TECHNICAL DOCUMENT OF THE PRODUCT
+    D       PROCUREMENT AUTHORITY OF THE MANUFACTURER HAVE NOT YET BEEN CHECKED
+    E       DESCRIPTIVE TECHNICAL DOCUMENT OF THE PRODUCT
+    F       TECHNICAL DOCUMENT FOR A PRODUCT WHICH IS SUBJECT TO QUALIFICATION
+    G       NOT AUTHORIZED FOR PROCUREMENT
+    H       TECHNICAL DOCUMENT DESCRIBING THE PRODUCT
+    K       CONSTITUTES THE ACTUAL MANUFACTURER OF THE ITEM
+    L       MANUFACTURER OR OEM WHO DOES NOT HAVE A CAGE CODE ASSIGNED.
+
+
+--------------------------------------------------------------------------------------------------------------
+RNVC  --  REFERENCE NUMBER VARIATION
+  decodes: v_flis_part.RNVC
+  values:  5
+--------------------------------------------------------------------------------------------------------------
+  REFERENCE NUMBER VARIATION CODE (RNVC): A CODE INDICATING THAT A CITED REFERENCE NUMBER IS OR IS NOT ITEM
+  IDENTIFYING, OR IS FOR INFORMATION ONLY. SEE VOLUME 10, TABLES 7,31 AND 75 AND QUICK INFO ON-LINE.31 AND 75
+  AND QUICK INFO ON-LINE.
+
+    1       NOT IDENTIFY AN ITEM OF PRODUCTION WITHOUT THE USE OF ADDITIONAL INFORMATION
+    2       AN ITEM-IDENTIFYING NUMBER
+    3       A VENDOR'S REFERENCE NUMBER
+    8       USED TO IDENTIFY THE ORIGINAL ITEM
+    9       WAS THE DESIGN CONTROL REFERENCE
+
+
+--------------------------------------------------------------------------------------------------------------
+SAC  --  STORES ACCOUNT
+  decodes: -- no column --
+  values:  3
+--------------------------------------------------------------------------------------------------------------
+  STORES ACCOUNT-MARINE CORPS: A CODE USED TO INDICATE THE TYPE OF FUNDS EMPLOYED WITHIN THE MARINE CORPS IN
+  SUPPLY SUPPORT OPERATIONS.SEE VOLUME 10, TABLE 55 AND QUICK INFO ON-LINE.
+
+    1       STOCK FUND ACCOUNT ITEM
+    2       STORES ACCOUNT SECONDARY ITEMS
+    3       STORES ACCOUNT PRINCIPAL ITEM
+
+
+--------------------------------------------------------------------------------------------------------------
+SADC  --  SERVICE/AGENCY DESIGNATOR
+  decodes: v_flis_part.SADC
+  values:  5122
+--------------------------------------------------------------------------------------------------------------
+  SERVICE/AGENCY DESIGNATOR CODE (SADC): A CODE DESIGNATING THE MILITARY SERVICE OR AGENCY THAT MADE A
+  DECISION TO RELATE A LOGISTICS REFERENCE NUMBER TO A NATIONAL STOCK NUMBER EVEN THOUGH THERE IS NO DIRECT
+  RELATIONSHIP OF THE REFERENCE NUMBER TO THE NSN OTHER THAN A CROSS-REFERENCE THAT THE NSN WAS ACCEPTED AS A
+  SUBSTITUTE FOR THE ITEM IDENTIFIED BY THE REFERENCE NUMBER. SEE VOLUME 10, TABLE 154 AND QUICK INFO
+  ON-LINE.
+
+  5122 values -- too many to list. Query:
+      SELECT value, meaning FROM code_decode WHERE field = 'SADC' ORDER BY value;
+
+--------------------------------------------------------------------------------------------------------------
+SCHEDULE_B  --  SCHEDULE B EXPORT
+  decodes: v_flis_identification.SCHEDULE_B
+  values:  20393
+--------------------------------------------------------------------------------------------------------------
+  TAXONOMY CODED VALUE CODE: THE CODE THAT REPRESENTS A SPECIFIC TAXONOMY CODED VALUE.
+
+  20393 values -- too many to list. Query:
+      SELECT value, meaning FROM code_decode WHERE field = 'SCHEDULE_B' ORDER BY value;
+
+--------------------------------------------------------------------------------------------------------------
+SHC  --  SPECIAL HAND
+  decodes: -- no column --
+  values:  33
+--------------------------------------------------------------------------------------------------------------
+  SPECIAL HANDLING CODE: A CODE USED FOR ALL SHIPMENTS VIA WATER, TO IDENTIFY THE EXCEPTION HANDLING REQUIRED
+  FOR CARGO INCLUDED WITHIN THE SHIPMENT UNIT. NUMERIC CODE DENOTES SINGLE HANDLING CONDITION, ALPHA CODE
+  DENOTES MIXED HANDLING REQUIREMENTS. SEE VOLUME 10, TABLE 83 AND QUICK INFO ON-LINE.
+
+    1       NOT TO BE ASSIGNED, SINGLE HAND CONDITION (SH)
+    2       HIGHEST SENSITIVITY, CATEGORY I, AA&E, UNCLASSIFIED
+    3       HIGH SENSITIVITY, CATEGORY II, AA&E, UNCLASSIFIED
+    4       MODERATE SENSITIVITY, CATEGORY III, AA&E, UNCLASSIFIED
+    5       LOW SENSITIVITY, CATEGORY IV, AA&E, UNCLASSIFIED
+    6       HIGHEST SENSITIVITY, CATEGORY I, AA&E, CLASSIFIED SECRET
+    7       HIGHEST SENSITIVITY, CATEGORY I, AA&E, CLASSIFIED CONFIDENTIAL
+    8       HIGH SENSITIVITY, CATEGORY II, AA&E, CLASSIFIED CONFIDENTIAL
+    9       OTHER OR NO SPECIAL HAND REQUIRED (SH)
+    B       HIGHEST SENSITIVITY, CATEGORY I, AA&E, UNCLASSIFIED
+    C       HIGH SENSITIVITY, CATEGORY II, AA&E, UNCLASSIFIED
+    D       MODERATE SENSITIVITY, CATEGORY III, AA&E, UNCLASSIFIED
+    E       LOW SENSITIVITY, CATEGORY IV, AA&E, UNCLASSIFIED
+    F       HIGHEST SENSITIVITY, CATEGORY I, AA&E, CLASSIFIED SECRET
+    G       HIGHEST SENSITIVITY, CATEGORY I, AA&E, CLASSIFIED CONFIDENTIAL
+    H       HIGH SENSITIVITY, CATEGORY II, AA&E, CLASSIFIED CONFIDENTIAL
+    I       OTHER OR NO SPECIAL HAND REQUIRED (SH)
+    K       HIGHEST SENSITIVITY, CATEGORY I, AA&E, UNCLASSIFIED
+    L       HIGH SENSITIVITY, CATEGORY II, AA&E, UNCLASSIFIED
+    M       MODERATE SENSITIVITY, CATEGORY III, AA&E, UNCLASSIFIED
+    N       LOW SENSITIVITY, CATEGORY IV, AA&E, UNCLASSIFIED
+    O       HIGHEST SENSITIVITY, CATEGORY I, AA&E, CLASSIFIED SECRET
+    P       HIGHEST SENSITIVITY, CATEGORY I, AA&E, CLASSIFIED CONFIDENTIAL
+    Q       HIGH SENSITIVITY, CATEGORY II, AA&E, CLASSIFIED CONFIDENTIAL
+    R       OTHER OR NO SPECIAL HAND REQUIRED (SH)
+    S       HIGHEST SENSITIVITY, CATEGORY I, AA&E, UNCLASSIFIED
+    T       HIGH SENSITIVITY, CATEGORY II, AA&E, UNCLASSIFIED
+    U       MODERATE SENSITIVITY, CATEGORY III, AA&E, UNCLASSIFIED
+    V       LOW SENSITIVITY, CATEGORY IV, AA&E, UNCLASSIFIED
+    W       HIGHEST SENSITIVITY, CATEGORY I, AA&E, CLASSIFIED SECRET
+    X       HIGHEST SENSITIVITY, CATEGORY I, AA&E, CLASSIFIED CONFIDENTIAL
+    Y       HIGH SENSITIVITY, CATEGORY II, AA&E, CLASSIFIED CONFIDENTIAL
+    Z       OTHER OR NO SPECIAL HAND REQUIRED (SH)
+
+
+--------------------------------------------------------------------------------------------------------------
+SICA  --  SECONDARY INVENTORY CONTROL ACTIVITY
+  decodes: -- no column --
+  values:  461
+--------------------------------------------------------------------------------------------------------------
+  SECONDARY INVENTORY CONTROL ACTIVITY: A CODE THAT IDENTIFIES A SUPPLY CONTROL ACTIVITY RESPONSIBLE FOR
+  CONTROLLING STOCK LEVELS AND MAINTAINING ITEM ACCOUNTABILITY WHEN SUPPLY SUPPORT IS FURNISHED BY A
+  DIFFERENT SERVICE OR AGENCY OR, IN THE CASE OF DEFENSE SUPPLY CENTERS, RESPONSIBLE FOR RESIDUAL SUPPLY
+  MANAGEMENT ACTIONS NOT TRANSFERRED TO THE GENERAL SERVICES ADMINISTRATION /GSA/. SHORT TITLE-SICA.
+  FORMERLY-THE RETAIL MANAGER. IN ACCORDANCE WITH DOD 4100.39-M,
+
+  461 values -- too many to list. Query:
+      SELECT value, meaning FROM code_decode WHERE field = 'SICA' ORDER BY value;
+
+--------------------------------------------------------------------------------------------------------------
+SICA_LOA  --  SECONDARY INVENTORY CONTROL ACTIVITY LEVEL OF AUTHORITY
+  decodes: -- no column --
+  values:  17
+--------------------------------------------------------------------------------------------------------------
+  SECONDARY INVENTORY CONTROL ACTIVITY LEVEL OF AUTHORITY: A CODE THAT IDENTIFIES THE LEVELS OF AUTHORITY OF
+  A SECONDARY INVENTORY CONTROL ACTIVITY (SICA). THE CODE INDICATES /1/ LOGISTICS MATERIEL MANAGEMENT, /2/
+  LEVEL OF REPONSIBILITY AND /3/ BASIS OF CATEGORIZATION. THE CODES WILL BE USED INTERNALLY WITHIN THE SYSTEM
+  FOR STATISTICS AND GENERAL MANAGEMENT DATA BASED ON MATERIEL MANAGEMENT RESPONSIBILITY ASSIGNED BY
+  SERVICES/AGENCIES DIRECTI
+
+    5D      ASSUMED BY A DLA ACTIVITY
+    5G      ASSUMED BY A GSA/CIVIL AGENCY
+    5H      MANAGED BY TACOM, DTRA, NSA OR DMA
+    66      CENTRAL PROCUREMENT AND DISPOSAL AUTHORITY HAVE BEEN ASSIGNED TO ANOTHER SERVICE
+    67      SERVICE ITEM CONTROL CENTER
+    68      CIVIL DEPARTMENT OR AGENCY
+    7D      CIVIL AGENCY RECEIVING SUPPLY SUPPORT
+    7G      GSA/CIVIL AGENCY MANAGED ITEMS
+    7V      VA-MANAGED ITEMS
+    7Y      CIVIL AGENCY RECEIVING SUPPLY SUPPORT FROM TACOM, DTRA, NSA OR DMA
+    8C      SERVICE/CIVIL AGENCY SUPPLY SUPPORT AGREEMENT FOR NONCONSUMABLE ITEM
+    8D      LEAD SERVICE RESPONSIBILITY HAS BEEN ASSIGNED TO ANOTHER SERVICE/CIVIL AGENCY
+    96      MILITARY SERVICE
+    97      MILITARY LEAD SERVICE/CIVIL AGENCY
+    9D      DLA ACTIVITY
+    9G      GSA/CIVIL AGENCY
+    9H      ACTIVITY AZ
+
+
+--------------------------------------------------------------------------------------------------------------
+SLC  --  SHELF LIFE
+  decodes: v_flis_management.SLC [deferred]
+  values:  35
+--------------------------------------------------------------------------------------------------------------
+  SHELF LIFE CODE: A CODE INDICATING THE STORAGE TIME PERIOD OR PERISHABILITY OF AN ITEM. *THIS DATA IS
+  CODIFIED BY ONE CHARACTER WHICH MAY BE AN ALPHA OR A NUMERIC. SEE VOLUME 10, TABLES 50 AND 143 AND QUICK
+  INFO ON-LINE.
+
+    0       NO SHELF-LIFE APPLIES
+    1       3 MONTHS
+    2       6 MONTHS
+    3       9 MONTHS
+    4       12 MONTHS
+    5       18 MONTHS
+    6       24 MONTHS
+    7       36 MONTHS
+    8       48 MONTHS
+    9       60 MONTHS
+    A       1 MONTH
+    B       2 MONTHS
+    C       3 MONTHS
+    D       4 MONTHS
+    E       5 MONTHS
+    F       6 MONTHS
+    G       9 MONTHS
+    H       12 MONTHS
+    I       72 MONTHS
+    J       15 MONTHS
+    K       18 MONTHS
+    L       21 MONTHS
+    M       24 MONTHS
+    N       27 MONTHS
+    P       30 MONTHS
+    Q       36 MONTHS
+    R       48 MONTHS
+    S       60 MONTHS
+    T       84 MONTHS
+    U       96 MONTHS
+    V       NON-STANDARD
+    W       120 MONTHS
+    X       NON-STANDARD
+    Y       180 MONTHS
+    Z       240 MONTHS
+
+
+--------------------------------------------------------------------------------------------------------------
+SMCC  --  SPECIAL MATERIAL CONTENT
+  decodes: -- no column --
+  values:  36
+--------------------------------------------------------------------------------------------------------------
+  SPECIAL MATERIAL CONTENT CODE: A CODE THAT INDICATES AN ITEM REPRESENTS OR CONTAINS PECULIAR MATERIAL
+  REQUIRING SPECIAL TREATMENT, PRECAUTIONS OR MANAGEMENT CONTROL OF THE ITEM. SEE VOLUME 10, TABLE 102AND
+  QUICK INFO ON-LINE.AND QUICK INFO ON-LINE.
+
+    0       RESERVED
+    1       ITEM NOT MANAGED IN HAZMINCEN
+    2       ELECTROSTATIC DISCHARGE/ELECTROMAGNETIC SENSITIVE
+    3       ELECTROSTATIC DISCHARGE SENSITIVE
+    4       ELECTROMAGNETIC SENSITIVE
+    5       HAZARDOUS MATERIAL
+    6       EXPLOSIVES ORDNANCE ITEMS
+    7       DANGEROUS WHEN WET MATERIAL
+    8       SPONTANEOUSLY COMBUSTIBLE MATERIAL
+    9       NON-HAZARDOUS OR NON-SENSITIVE
+    A       MEDICAL ITEMS
+    B       FLAMMABLE COMPRESSED GAS
+    C       CORROSIVE SOLIDS/LIQUID
+    D       ALCOHOL
+    E       PRECIOUS METALS
+    F       FLAMMABLE LIQUIDS
+    G       COMBUSTIBLE LIQUIDS
+    H       PCB
+    I       AEROSOLS
+    J       OXIDIZING MATERIAL
+    K       ORGANIC PEROXIDES
+    L       OTHER REGULATED MATERIALS
+    M       MAGNETIC MATERIAL
+    N       ASBESTOS
+    O       OFF-GASSING CONSIDERATIONS
+    P       POISON
+    Q       EXPLOSIVE NON-ORDNANCE ITEMS
+    R       RADIOACTIVE MATERIAL
+    S       OILS/PETROLEUM PRODUCTS
+    T       TOXIC
+    U       MERCURY
+    V       ACID
+    W       NONFLAMMABLE COMPRESSED GAS
+    X       RADIOACTIVE AND MAGNETIC MATERIAL
+    Y       NON-MAGNETIC
+    Z       FLAMMABLE SOLIDS
+
+
+--------------------------------------------------------------------------------------------------------------
+SMIC  --  SPECIAL MATERIAL IDENTIFICATION
+  decodes: -- no column --
+  values:  479
+--------------------------------------------------------------------------------------------------------------
+  SPECIAL MATERIAL IDENTIFICATION CODE: A CODE EMPLOYED BY THE NAVY TO CLASSIFY ITEMS INTO CATEGORIES BY
+  SYSTEMS OR COMPONENTS OF SYSTEMS. SEE VOLUME 10, TABLE 60AND QUICK INFO ON-LINE.AND QUICK INFO ON-LINE.
+
+  479 values -- too many to list. Query:
+      SELECT value, meaning FROM code_decode WHERE field = 'SMIC' ORDER BY value;
+
+--------------------------------------------------------------------------------------------------------------
+SNC  --  SERIAL NUMBER CONTROL
+  decodes: -- no column --
+  values:  2
+--------------------------------------------------------------------------------------------------------------
+  SERIAL NUMBER CONTROL CODE, COAST GUARD: A SINGLE NUMERIC CODE USED TO IDENTIFY WHETHER OR NOT AN ITEM IS
+  SUBJECT TO SERIAL NUMBER CONTROL. SEE VOLUME 10, TABLE 150AND QUICK INFO ON-LINE.AND QUICK INFO ON-LINE.
+
+    0       ITEM NOT CONTROLLED BY SERIAL NUMBER
+    1       ITEM CONTROLLED BY SERIAL NUMBER
+
+
+--------------------------------------------------------------------------------------------------------------
+SOS  --  SOURCE OF SUPPLY
+  decodes: p_flis_nsn.SOS
+  values:  258
+--------------------------------------------------------------------------------------------------------------
+  SOURCE OF SUPPLY (SOS) CODE: A CODE /MILITARY STANDARD REQUISITIONING AND ISSUE PROCEDURES (MILSTRIP)
+  ROUTING IDENTIFIER CODE/ WHICH IDENTIFIES THE ACTIVITY AS A POTENTIAL SOURCE OF SUPPLY USED IN THE
+  AUTOMATIC DIGITAL NETWORK TO AUTOMATICALLY ROUTE MILSTRIP REQUISITIONS. THE FIELD IS REFLECTED IN 3 PARTS
+  OF THE RECORD, FOR THE ARMY, NAVY AND AIR FORCE. SEE VOLUME 10, TABLES 103 AND 113 AND QUICK INFO ON-LINE.
+
+  258 values -- too many to list. Query:
+      SELECT value, meaning FROM code_decode WHERE field = 'SOS' ORDER BY value;
+
+--------------------------------------------------------------------------------------------------------------
+SOSM  --  SOURCE OF SUPPLY
+  decodes: v_flis_management.SOSM [deferred]
+  values:  238
+--------------------------------------------------------------------------------------------------------------
+  SOURCE OF SUPPLY (SOS) CODE: A CODE /MILITARY STANDARD REQUISITIONING AND ISSUE PROCEDURES (MILSTRIP)
+  ROUTING IDENTIFIER CODE/ WHICH IDENTIFIES THE ACTIVITY AS A POTENTIAL SOURCE OF SUPPLY USED IN THE
+  AUTOMATIC DIGITAL NETWORK TO AUTOMATICALLY ROUTE MILSTRIP REQUISITIONS. THE FIELD IS REFLECTED IN 3 PARTS
+  OF THE RECORD, FOR THE ARMY, NAVY AND AIR FORCE. SEE VOLUME 10, TABLES 103 AND 113 AND QUICK INFO ON-LINE.
+
+  238 values -- too many to list. Query:
+      SELECT value, meaning FROM code_decode WHERE field = 'SOSM' ORDER BY value;
+
+--------------------------------------------------------------------------------------------------------------
+SPC_MKG  --  SPECIAL MARKING
+  decodes: -- no column --
+  values:  22
+--------------------------------------------------------------------------------------------------------------
+  SPECIAL MARKING CODE: A TWO POSITION ALPHANUMERIC CODE THAT IDENTIFIES THE SPECIAL MARKINGS APPLIED TO THE
+  CONTAINER, WHICH IS PART OF THE TOTAL PACK TO PROTECT THE CONTAINED ITEM DURING PRESERVATION, PACKING,
+  STORAGE, TRANSIT AND REMOVAL FROM THE PACK. IN ACCORDANCE WITH DOD 4100.39-M, VOLUME 10, TABLE 182 AND
+  MIL-STD-2073-1E, APPENDIX J, TABLE J.X.
+
+    00      NUMERIC
+    01      NUMERIC
+    02      NUMERIC
+    03      NUMERIC
+    04      NUMERIC
+    05      NUMERIC
+    06      NUMERIC
+    07      NUMERIC
+    12      FRAGILE METHOD 50
+    14      CENTER OF BALANCE
+    17      REUSABLE CONTAINER
+    19      METHOD 50 REUSABLE CONTAINER
+    20      NUMERIC
+    24      OPEN FOR INSPECTION OR USE ONLY
+    32      TYPE I SHELF LIFE
+    33      TYPE II SHELF LIFE
+    36      FRAGILE ARROW UP AND GLASS
+    37      FRAGILE ARROW UP
+    39      ESD SENSITIVE
+    40      NUMERIC
+    60      NUMERIC
+    ZZ      SPECIAL REQUIREMENTS
+
+
+--------------------------------------------------------------------------------------------------------------
+SUPP_COLLAB  --  SUPPLEMENTARY COLLABORATOR
+  decodes: -- no column --
+  values:  461
+--------------------------------------------------------------------------------------------------------------
+  SUPPLEMENTARY COLLABORATOR: AN ACTIVITY DESIGNATED TO COLLABORATE ON PROPOSED REVISIONS TO THE ITEM
+  IDENTIFICATION DATA OF A SPECIFIC NATIONAL ITEM IDENTIFICATION NUMBER ON WHICH IT IS RECORDED.
+
+  461 values -- too many to list. Query:
+      SELECT value, meaning FROM code_decode WHERE field = 'SUPP_COLLAB' ORDER BY value;
+
+--------------------------------------------------------------------------------------------------------------
+TCC  --  TYPE OF CARGO
+  decodes: -- no column --
+  values:  30
+--------------------------------------------------------------------------------------------------------------
+  TYPE OF CARGO CODE: A CODE USED FOR ALL SHIPMENTS VIA WATER TO IDENTIFY THE TYPE OF CARGO INCLUDED WITHIN
+  THE SHIPMENT UNIT. E.G., A-RADIOACTIVE, H-SUBJECT TO DAMAGE FROM HEAT, P-POISON, ETC. SEE VOLUME 10, TABLE
+  82 AND QUICK INFO ON-LINE.
+
+    1       AIRCRAFT ENGINE
+    2       PROTECTED/SENSITIVE NON-HAZARDOUS/NON-ESD COMMODITIES
+    3       ELECTROSTATIC SENSITIVE DEVICE
+    4       RADIOACTIVE MATERIAL
+    A       RADIOACTIVE SUBSTANCES
+    B       MIXED HAZARDOUS MATERIALS
+    C       ETIOLOGIC AGENT
+    D       CONTAMINATED CARGO
+    E       EMPTY HAZARDOUS MATERIAL CONTAINERS
+    F       EXPLOSIVES CLASS C
+    G       NONFLAMMABLE COMPRESSED GAS
+    H       SUBJECT TO DAMAGE FROM HEAT
+    I       EXPLOSIVES CLASS A
+    J       EXPLOSIVES CLASS B
+    K       SPONTANEOUSLY COMBUSTIBLE SUBSTANCES
+    L       WATER REACTIVE SUBSTANCE
+    M       MAGNETIC MATERIAL
+    N       DANGEROUS MATERIEL
+    O       FLAMMABLE COMPRESSED GAS
+    P       POISON CLASS B
+    Q       SUBJECT TO DAMAGE FROM FREEZING
+    R       FLAMMABLE LIQUIDS
+    S       POISON CLASS A
+    T       POISON CLASS C
+    U       COMBUSTIBLE LIQUIDS
+    V       MISCELLANEOUS HAZARDOUS MATERIALS
+    W       CORROSIVE MATERIALS
+    X       FLAMMABLE SOLIDS
+    Y       OXIDIZING MATERIALS
+    Z       NO SPECIAL TYPE OF CARGO CODE APPLICABLE
+
+
+--------------------------------------------------------------------------------------------------------------
+THK  --  THICKNESS OF CUSHIONING OR DUNNAGE
+  decodes: -- no column --
+  values:  23
+--------------------------------------------------------------------------------------------------------------
+  THICKNESS OF CUSHIONING OR DUNNAGE CODE: A ONE POSITION ALPHANUMERIC CODE THAT IDENTIFIES THE MINIMUM
+  THICKNESS OF MATERIAL USED TO CUSHION THE ITEM. IN ACCORDANCE WITH DOD 4100.39-M, VOLUME 10, TABLE 182 AND
+  MIL-STD-2073-1E, APPENDIX J, TABLE J.VI.
+
+    0       NUMERIC
+    A       1/4 INCH
+    B       1/2 INCH
+    C       3/4 INCH
+    D       1 INCH
+    E       1-1/4 INCH
+    F       1-1/2 INCH
+    G       1-3/4 INCH
+    H       2 INCHES
+    J       2-1/4 INCHES
+    K       2-1/2 INCHES
+    L       2-3/4 INCHES
+    M       3 INCHES
+    N       3-1/4 INCHES
+    P       3-1/2 INCHES
+    Q       3-3/4 INCHES
+    R       4 INCHES
+    S       4-1/4 INCHES
+    T       4-1/2 INCHES
+    U       4-3/4 INCHES
+    V       5 INCHES
+    W       5-1/4 INCHES
+    Z       SPECIAL REQUIREMENTS
+
+
+--------------------------------------------------------------------------------------------------------------
+TOS  --  ITEM TYPE STORAGE
+  decodes: -- no column --
+  values:  32
+--------------------------------------------------------------------------------------------------------------
+  ITEM TYPE STORAGE CODE: A ONE POSITION ALPHANUMERIC CODE THAT INDICATES THE TYPE OF STORAGE SPACE AND
+  ENVIRONMENT CONDITIONS TO BE MAINTAINED FOR AN ITEM DURING STORAGE AND SHIPMENT. IN ACCORDANCE WITH DOD
+  4100.39-M, VOLUME 10, TABLE 182 AND DA PAM 708-2, TABLE 3-20.
+
+    2       MEDICAL CONTROLLED HUMIDITY
+    3       MEDICAL CONTROLLED ROOM TEMPERATURE
+    4       MEDICAL FREEZE
+    5       MEDICAL REFRIGERATED
+    6       MEDICAL REFRIGERATED VAULT
+    7       MEDICAL REFRIGERATED SECURED
+    8       MEDICAL CONTROLLED ROOM TEMPERATURE VAULT
+    9       MEDICAL CONTROLLED ROOM TEMPERATURE SECURED
+    A       HEATED GENERAL PURPOSE
+    B       UNHEATED GENERAL PURPOSE
+    C       CONTROLLED HUMIDITY
+    D       CONTROLLED ROOM TEMPERATURE
+    E       RESERVED
+    F       FREEZE
+    G       FREEZE
+    H       HAZARDOUS MATERIAL
+    J       RESERVED
+    K       RESERVED
+    L       RESERVED
+    M       RESERVED
+    N       HAZARDOUS MATERIAL/REFRIGERATED
+    P       RESERVED
+    Q       RESERVED
+    R       REFRIGERATED
+    S       SHED
+    T       SECURED
+    U       UNCOVERED SPACE
+    V       SECURED VAULT
+    W       WET STORAGE
+    X       NONE ASSIGNED BY INVENTORY CONTROL POINT
+    Y       AMMUNITION
+    Z       SPECIAL
+
+
+--------------------------------------------------------------------------------------------------------------
+UCL  --  UNIT CONTAINER LEVEL
+  decodes: -- no column --
+  values:  4
+--------------------------------------------------------------------------------------------------------------
+  UNIT CONTAINER LEVEL CODE: A ONE POSITION ALPHA CODE THAT INDICATES IF THE UNIT CONTAINER IS AN ACCEPTABLE
+  SHIPPING CONTAINER AND THE HIGHEST LEVEL OF PACKING PROTECTION PROVIDED BY THE CONTAINER. IN ACCORDANCE
+  WITH DOD 4100.39-M, VOLUME 10, TABLE 182 AND MIL-STD-2073-1E, APPENDIX J, TABLE J.VIII.
+
+    A       LEVEL A PACKING PROTECTION
+    B       LEVEL B PACKING PROTECTION
+    O       NOT AN ACCEPTABLE SHIPPING CONTAINER
+    Z       REQUIRES SPECIAL CONSIDERATION
+
+
+--------------------------------------------------------------------------------------------------------------
+UNIT_CONT  --  UNIT CONTAINER
+  decodes: -- no column --
+  values:  88
+--------------------------------------------------------------------------------------------------------------
+  UNIT CONTAINER CODE: A TWO POSITION ALPHANUMERIC CODE THAT IDENTIFIES THE CONTAINER USED TO HOLD THE
+  QUANTITY UNIT PACK. IN ACCORDANCE WITH DOD 4100.39-M, VOLUME 10, TABLE 182 AND MIL-STD-2073-1E, APPENDIX J,
+  TABLE J.VII.
+
+  88 values -- too many to list. Query:
+      SELECT value, meaning FROM code_decode WHERE field = 'UNIT_CONT' ORDER BY value;
+
+--------------------------------------------------------------------------------------------------------------
+UOM  --  UNIT OF MEASURE
+  decodes: v_flis_management.UOM [deferred]
+  values:  353
+--------------------------------------------------------------------------------------------------------------
+  UNIT MEASURE CODE: A TWO POSITION ALPHA CODE INDICATING A RECOGNIZABLE PHYSICAL MEASUREMENT/LENGTH, VOLUME,
+  WEIGHT/ A COUNT OF ITEM SUCH AS, FOOT, GALLON, POUND, EACH, DOZEN, GROSS, FOR THE RELATED NATIONAL STOCK
+  NUMBER. SEE VOLUME 10, TABLE 81 AND QUICK INFO ON-LINE.NUMBER. SEE VOLUME 10, TABLE 81 AND QUICK INFO
+  ON-LINE.
+
+  353 values -- too many to list. Query:
+      SELECT value, meaning FROM code_decode WHERE field = 'UOM' ORDER BY value;
+
+--------------------------------------------------------------------------------------------------------------
+USC  --  USING SERVICE
+  decodes: v_flis_management.USC [deferred]
+  values:  14
+--------------------------------------------------------------------------------------------------------------
+  USING SERVICE CODE: A CODE USED TO DIFFERENTIATE BETWEEN SERVICES, INTEGRATED MATERIEL MANAGER, LEAD
+  SERVICE AND CIVIL AGENCY CATALOG MANAGEMENT DATA.SEE VOLUME 10, TABLE 39 AND QUICK INFO ON-LINESEE VOLUME
+  10, TABLE 39 AND QUICK INFO ON-LINE
+
+    A       U.S.ARMY
+    B       FEDERAL AVIATION ADMINISTRATION
+    C       U.S. COAST GUARD
+    D       LEAD SERVICE
+    F       U.S. AIR FORCE
+    G       GENERAL SERVICES ADMINISTRATION
+    I       INTEGRATED MATERIEL MANAGER
+    L       LEAD SERVICE
+    M       U.S. MARINE CORPS
+    N       U.S. NAVY
+    S       USSOCOM
+    V       VETERANS ADMINISTRATION
+    W       NATIONAL WEATHER SERVICE
+    X       ABBREVIATED SEGMENT H
+
+
+--------------------------------------------------------------------------------------------------------------
+WCC  --  WATER COMMODITY
+  decodes: -- no column --
+  values:  477
+--------------------------------------------------------------------------------------------------------------
+  WATER COMMODITY CODE: A SERIES OF CODES USED FOR ALL SHIPMENTS VIA WATER, TO IDENTIFY COMMODITIES FOR OCEAN
+  MANIFESTING, MILITARY SEA TRANSPORTATION SERVICE /MSTS/ BILLING, COST ACCOUNTING AND CONTRACTOR PAYMENT,
+  FIRST POSITION /NUMERIC/ MAJOR COMMODITY CATEGORY, SECOND POSITION /ALPHANUMERIC/ MINOR COMMODITY CATEGORY,
+  THIRD POSITION /ALPHANUMERIC/ SPECIFIC COMMODITY. E.G., CODE 515 OR 51E FROM 500-799 SERIES.
+
+  477 values -- too many to list. Query:
+      SELECT value, meaning FROM code_decode WHERE field = 'WCC' ORDER BY value;
+
+--------------------------------------------------------------------------------------------------------------
+WRAP_MAT  --  WRAPPING MATERIAL
+  decodes: -- no column --
+  values:  18
+--------------------------------------------------------------------------------------------------------------
+  WRAPPING MATERIAL CODE: A TWO POSITION ALPHANUMERIC CODE THAT IDENTIFIES THE TYPE OF WRAPPING MATERIAL TO
+  BE USED ON AN ITEM. IN ACCORDANCE WITH DOD 4100.39-M, VOLUME 10, TABLE 182 AND MIL-STD-2073-1E, APPENDIX J,
+  TABLE J.IV.
+
+    00      NO REQUIREMENT
+    BA      ALUMINUM FOIL
+    CA      KRAFT WRAPPING PAPER
+    DA      PAPER TISSUE
+    EA      NEUTRAL WRAPPING PAPER
+    EB      NEUTRAL WRAPPING PAPER FLAT
+    EC      NEUTRAL WRAPPING PAPER CREPED
+    FA      LAMINATED AND CREPED WRAPPING PAPER
+    GB      GREASEPROOF WATERPROOF BARRIER
+    GC      MEDIUM DUTY GREASEPROOF WATERPROOF
+    GH      LIGHT DUTY GREASEPROOF WATERPROOF
+    JA      PLASTIC SHEET
+    JL      TRANSPARENT VOLATILE CORROSION INHIBITOR TREATED BARRIER
+    JV      TRANSPARENT WATERPROOF BARRIER
+    K3      TRANSPARENT ELECTROSTATIC PROTECTIVE STATIC SHIELDING
+    LA      LENS PAPER
+    MB      VOLATILE CORROSION INHIBITOR TREATED
+    ZZ      SPECIAL REQUIREMENTS
+
+
+--------------------------------------------------------------------------------------------------------------
+W_ESDC  --  SPECIFIC WEAPONS SYSTEM/END ITEM OR HOMOGENEOUS GROUP OF ITEMS
+  decodes: -- no column --
+  values:  206
+--------------------------------------------------------------------------------------------------------------
+  THE CODES FOR THIS GROUP ARE ALPHA OR NUMERIC. FOR USSOCOM-MANAGED ITEMS, THESE CODES, IN COMBINATION WITH
+  THE CODES ASSIGNED IN POSITION 4, WILL IDENTIFY A SPECIFIC WEAPONS SYSTEM/END ITEM OR HOMOGENEOUS GROUP OF
+  ITEMS. ALPHA CODE A THROUGH Z, EXCEPT THE LETTERS I AND O, AND NUMERIC 1 THROUGH 9 AND 0 (ZERO) ARE
+  AVAILABLE. FOR MANAGED ITEMS THAT CANNOT BE IDENTIFIED TO A SPECIFIC USSOCOM WEAPONS SYSTEMS/END ITEM THIS
+  CODE WILL BE THE NU
+
+  206 values -- too many to list. Query:
+      SELECT value, meaning FROM code_decode WHERE field = 'W_ESDC' ORDER BY value;

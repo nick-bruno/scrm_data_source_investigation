@@ -1,0 +1,15 @@
+# Environments
+.venv/
+
+# Downloaded source data and the database built from it. Both are
+# reproducible from the loaders; neither belongs in git (the FLIS zips alone
+# are ~800 MB and the database is ~3 GB).
+data/raw/
+data/*.duckdb
+data/*.duckdb.wal
+
+# Python
+__pycache__/
+*.pyc
+
+.DS_Store
